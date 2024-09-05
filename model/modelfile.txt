@@ -1,0 +1,1 @@
+https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct-gguf

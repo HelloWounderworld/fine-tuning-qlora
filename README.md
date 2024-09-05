@@ -1,2 +1,5 @@
-# fugaku-llm-api-study
-This repository is to understand how the LLM works. I'm going to use fugaku LLM to make it!
+# Understand Fugaku LLM
+
+    https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct-gguf
+
+    https://zenn.dev/hellorusk/articles/94bf32ea09ba26
