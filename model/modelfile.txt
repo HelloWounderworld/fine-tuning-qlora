@@ -1,1 +1,16 @@
-https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct-gguf
+FROM ./Fugaku-LLM-13B-instruct-0325b-q5_k_m.gguf
+
+PARAMETER repeat_penalty 1.0
+PARAMETER temperature 0.1
+PARAMETER top_k 0
+PARAMETER top_p 1.0
+PARAMETER stop "<EOD|LLM-jp>"
+
+TEMPLATE """{{ if .System }}{{ .System }}{{ end }}{{ if .Prompt }}
+
+### 指示:
+{{ .Prompt }}{{ end }}
+
+### 応答:
+{{ .Response }}<EOD|LLM-jp>"""
+SYSTEM """以下は、タスクを説明する指示です。要求を適切に満たす応答を書きなさい。"""
