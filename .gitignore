@@ -3,3 +3,5 @@ logs/*
 model/*.gguf
 
 !logs/.gitkeep
+
+.venv/*
