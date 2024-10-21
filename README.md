@@ -84,7 +84,13 @@
 14. [How to training an LLM using Fine Tune by Transformers Reforiciment Learning STF][14]
 15. [LLM JP STF Fine Tuning][15]
 16. [LLM JP Tokenizer][16]
-17. [LLM JP DPO][17]
+17. [LLM JP DPO - This uses many GPU Memory][17]
+18. [Lora Fine tuning][18]
+19. [qLora Fine tuning][19]
+20. [qLora Fine tuning article][20]
+21. [Phi-3][21]
+22. [Language Models are Few-Shot Learners - Foundation][22]
+23. [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models - Kind of Prompt Engineering][23]
 
 [1]: https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct
 [2]: https://github.com/Fugaku-LLM/DeepSpeedFugaku
@@ -103,3 +109,9 @@
 [15]: https://github.com/llm-jp/llm-jp-sft
 [16]: https://github.com/llm-jp/llm-jp-tokenizer
 [17]: https://github.com/llm-jp/llm-jp-dpo
+[18]: https://github.com/microsoft/LoRA
+[19]: https://github.com/artidoro/qlora
+[20]: https://arxiv.org/abs/2305.14314
+[21]: https://github.com/microsoft/Phi-3CookBook
+[22]: https://arxiv.org/abs/2005.14165
+[23]: https://arxiv.org/abs/2201.11903
