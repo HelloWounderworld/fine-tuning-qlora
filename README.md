@@ -16,6 +16,10 @@
 
          python -m venv --help
 
+    If not just install running the following
+
+        sudo apt-get install python3.x-venv
+
 3. Creating an virtual environment:
 
     Choose the directory that you want to develop and digit the following command
