@@ -1,4 +1,4 @@
-FROM ./Fugaku-LLM-13B-instruct-0325b-q5_k_m.gguf
+FROM ./Fugaku-LLM-13B-instruct-0325b.gguf
 
 PARAMETER repeat_penalty 1.0
 PARAMETER temperature 0.1

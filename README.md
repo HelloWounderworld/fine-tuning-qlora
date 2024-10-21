@@ -1,10 +1,10 @@
-# Understand Fugaku LLM
+# Fine Tuning using LLM-JP-STF at the Fugaku-LLM
 
     https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct-gguf
 
     https://zenn.dev/hellorusk/articles/94bf32ea09ba26
 
-## Creating a virtual environment in Python:
+## Creating a virtual environment in Python and we will install Ollama to run Fugaku LLM:
 
 1. Checking python version:
 
@@ -66,6 +66,18 @@
 
         deactivate
 
+8. Installing Ollama:
+
+        sudo apt-get update
+
+        sudo apt-get install curl
+
+        curl -fsSL https://ollama.com/install.sh | sh
+
+9. Run Ollama:
+
+    ollama create fugaku -f modelfile.txt
+
 ## References:
 
 1. [Fugaku LLM ChatBot][1]
@@ -91,6 +103,7 @@
 21. [Phi-3][21]
 22. [Language Models are Few-Shot Learners - Foundation][22]
 23. [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models - Kind of Prompt Engineering][23]
+24. [Phi-3 - FineTuning][24]
 
 [1]: https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct
 [2]: https://github.com/Fugaku-LLM/DeepSpeedFugaku
@@ -115,3 +128,4 @@
 [21]: https://github.com/microsoft/Phi-3CookBook
 [22]: https://arxiv.org/abs/2005.14165
 [23]: https://arxiv.org/abs/2201.11903
+[24]: https://zenn.dev/headwaters/articles/55f648399c1820
