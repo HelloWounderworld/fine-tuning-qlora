@@ -4,6 +4,17 @@
 
     https://zenn.dev/hellorusk/articles/94bf32ea09ba26
 
+## What is Fine tuning?
+ファインチューニングはいわゆる人間で例えますと人間の脳を洗脳するようなものです。なのでまずは何をするのかといいますと人間の脳の洗脳を施す前にまずは学習させましてその人の自頭を良くしてなおかつ都合のいいように考え方を偏らせる方法です。
+
+今回はFugaku-LLMと言うもうすであらかじめジェネラルに学習された脳をもっと学習させてそして学習させている最中に自分好みの考え方になるためにその方向性に偏りのある情報で洗脳を施します。
+
+## Steps that I would like to teach to mkae Fine Tuning:
+
+Step 1. Fine Tuning create a ".gguf" file. このファイル制作はいわゆる人間の自頭の作成です。
+
+Step 2. To make Fine Tuning localy without internet.
+
 ## Creating a virtual environment in Python and we will install Ollama to run Fugaku LLM:
 
 1. Checking python version:
@@ -76,7 +87,42 @@
 
 9. Run Ollama:
 
-    ollama create fugaku -f modelfile.txt
+    In first place, you have to in at the model directory
+
+        cd model
+
+    In the following to run the command below to read modelfile.txt
+
+        ollama create fugaku -f modelfile.txt
+
+    After this, you can start the ollama
+
+        ollama run fugaku
+
+10. Verify ollama's log
+
+
+        journalctl -u ollama --no-pager
+
+## Articles that I based to make Fine Tuning:
+
+    https://medium.com/@harsh.vardhan7695/fine-tuning-llama-2-using-lora-and-qlora-a-comprehensive-guide-fd2260f0aa5f
+
+    https://medium.com/@givkashi/fine-tuning-llama-2-model-with-qlora-on-a-custom-dataset-33126b94dee5
+
+    https://note.com/shi3zblog/n/n1a4854ba8949
+
+    https://medium.com/@sdfgh98/gemma2-fine-tuning-from-sft-and-qlora-to-gguf-deployment-with-ollama-3312d1c07ef7
+
+    https://pytorch.org/torchtune/stable/tutorials/qlora_finetune.html
+
+    https://www.kaggle.com/code/philculliton/fine-tuning-with-llama-2-qlora
+
+    https://note.com/kan_hatakeyama/n/n5941dd9d3af4
+
+    https://note.com/npaka/n/nfa56b035c178
+
+    https://note.com/kan_hatakeyama/n/ncd09c52d26c7
 
 ## References:
 
@@ -105,6 +151,7 @@
 23. [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models - Kind of Prompt Engineering][23]
 24. [Phi-3 - FineTuning][24]
 25. [Ollama modelfile.txt parameters settings][25]
+26. [Curiosity about Content Creation using LLM Open Source Model][26]
 
 [1]: https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct
 [2]: https://github.com/Fugaku-LLM/DeepSpeedFugaku
@@ -131,3 +178,4 @@
 [23]: https://arxiv.org/abs/2201.11903
 [24]: https://zenn.dev/headwaters/articles/55f648399c1820
 [25]: https://github.com/ollama/ollama/blob/main/docs/modelfile.md#parameter
+[26]: https://byrayray.medium.com/llama-3-2-vs-llama-3-1-vs-gemma-2-finding-the-best-open-source-llm-for-content-creation-1f6085c9f87a
