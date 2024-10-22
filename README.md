@@ -104,6 +104,7 @@
 22. [Language Models are Few-Shot Learners - Foundation][22]
 23. [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models - Kind of Prompt Engineering][23]
 24. [Phi-3 - FineTuning][24]
+25. [Ollama modelfile.txt parameters settings][25]
 
 [1]: https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct
 [2]: https://github.com/Fugaku-LLM/DeepSpeedFugaku
@@ -129,3 +130,4 @@
 [22]: https://arxiv.org/abs/2005.14165
 [23]: https://arxiv.org/abs/2201.11903
 [24]: https://zenn.dev/headwaters/articles/55f648399c1820
+[25]: https://github.com/ollama/ollama/blob/main/docs/modelfile.md#parameter
