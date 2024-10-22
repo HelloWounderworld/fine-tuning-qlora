@@ -1,4 +1,4 @@
-# Fine Tuning using LLM-JP-STF at the Fugaku-LLM
+# Fine Tuning using qLora at the Fugaku-LLM
 
     https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct-gguf
 
