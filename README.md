@@ -99,6 +99,10 @@ Step 2. To make Fine Tuning localy without internet.
 
         ollama run fugaku
 
+    TIP: If you need to finish the chat, you just need to type
+
+        /bye
+
 10. Verify ollama's log
 
 
@@ -107,6 +111,8 @@ Step 2. To make Fine Tuning localy without internet.
 ## Articles that I based to make Fine Tuning:
 
     https://medium.com/@harsh.vardhan7695/fine-tuning-llama-2-using-lora-and-qlora-a-comprehensive-guide-fd2260f0aa5f
+
+    https://medium.com/@givkashi/fine-tuning-llama-2-model-with-qlora-on-a-custom-dataset-33126b94dee5
 
     https://medium.com/@givkashi/fine-tuning-llama-2-model-with-qlora-on-a-custom-dataset-33126b94dee5
 
@@ -123,6 +129,12 @@ Step 2. To make Fine Tuning localy without internet.
     https://note.com/npaka/n/nfa56b035c178
 
     https://note.com/kan_hatakeyama/n/ncd09c52d26c7
+
+## Creating an Interactive Chat by Ollama:
+
+    https://github.com/ollama-ui/ollama-ui
+
+    https://tech.takuyakobayashi.jp/2024/05/18/23#google_vignette
 
 ## References:
 
