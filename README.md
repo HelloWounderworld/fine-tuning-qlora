@@ -16,6 +16,9 @@ Step 1. Fine Tuning create a ".gguf" file. このファイル制作はいわゆ�
 Step 2. To make Fine Tuning localy without internet.
 
 ## Creating a virtual environment in Python and we will install Ollama to run Fugaku LLM:
+Article where I based
+
+    https://tech.takuyakobayashi.jp/2024/05/18/23#google_vignette
 
 1. Checking python version:
 
