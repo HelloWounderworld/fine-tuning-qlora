@@ -5,7 +5,7 @@
     https://zenn.dev/hellorusk/articles/94bf32ea09ba26
 
 ## What is Fine tuning?
-ファインチューニングはいわゆる人間で例えますと人間の脳を洗脳するようなものです。なのでまずは何をするのかといいますと人間の脳の洗脳を施す前にまずは学習させましてその人の自頭を良くしてなおかつ都合のいいように考え方を偏らせる方法です。
+ファインチューニングはいわゆる人間で例えますと人間の脳をよく言えば教育で悪く言えば洗脳するようなものです。なのでまずは何をするのかといいますと人間の脳の洗脳を施す前にまずは学習させましてその人の自頭を良くしてなおかつ都合のいいように考え方を偏らせる方法です。
 
 今回はFugaku-LLMと言うもうすであらかじめジェネラルに学習された脳をもっと学習させてそして学習させている最中に自分好みの考え方になるためにその方向性に偏りのある情報で洗脳を施します。
 
@@ -114,8 +114,6 @@ Article where I based
 ## Articles that I based to make Fine Tuning:
 
     https://medium.com/@harsh.vardhan7695/fine-tuning-llama-2-using-lora-and-qlora-a-comprehensive-guide-fd2260f0aa5f
-
-    https://medium.com/@givkashi/fine-tuning-llama-2-model-with-qlora-on-a-custom-dataset-33126b94dee5
 
     https://medium.com/@givkashi/fine-tuning-llama-2-model-with-qlora-on-a-custom-dataset-33126b94dee5
 
