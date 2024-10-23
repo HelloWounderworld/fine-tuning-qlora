@@ -1,0 +1,115 @@
+===================================BUG REPORT===================================
+Welcome to bitsandbytes. For bug reports, please run
+
+python -m bitsandbytes
+
+ and submit this information together with your error trace to: https://github.com/TimDettmers/bitsandbytes/issues
+================================================================================
+bin /home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/libbitsandbytes_cpu.so
+/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/cextension.py:34: UserWarning: The installed version of bitsandbytes was compiled without GPU support. 8-bit optimizers, 8-bit multiplication, and GPU quantization are unavailable.
+  warn("The installed version of bitsandbytes was compiled without GPU support. "
+/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/libbitsandbytes_cpu.so: undefined symbol: cadam32bit_grad_fp32
+/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: /home/teramatsu/miniconda3/envs/gua did not contain ['libcudart.so', 'libcudart.so.11.0', 'libcudart.so.12.0'] as expected! Searching further paths...
+  warn(msg)
+/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('unix')}
+  warn(msg)
+CUDA_SETUP: WARNING! libcudart.so not found in any environmental path. Searching in backup paths...
+/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/usr/local/cuda/lib64')}
+  warn(msg)
+/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: No libcudart.so found! Install CUDA or the cudatoolkit package (anaconda)!
+  warn(msg)
+CUDA SETUP: Highest compute capability among GPUs detected: 8.6
+CUDA SETUP: Detected CUDA version 124
+CUDA SETUP: Loading binary /home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/libbitsandbytes_cpu.so...
+Namespace(model_name_or_path='EleutherAI/pythia-12b', trust_remote_code=False, use_auth_token=False, eval_dataset_size=1024, max_train_samples=None, max_eval_samples=None, source_max_len=1024, target_max_len=256, dataset='alpaca', dataset_format=None, output_dir='./output', overwrite_output_dir=False, do_train=True, do_eval=False, do_predict=False, evaluation_strategy=<IntervalStrategy.NO: 'no'>, prediction_loss_only=False, per_device_train_batch_size=1, per_device_eval_batch_size=8, per_gpu_train_batch_size=None, per_gpu_eval_batch_size=None, gradient_accumulation_steps=16, eval_accumulation_steps=None, eval_delay=0, learning_rate=0.0002, weight_decay=0.0, adam_beta1=0.9, adam_beta2=0.999, adam_epsilon=1e-08, max_grad_norm=0.3, num_train_epochs=3.0, max_steps=10000, lr_scheduler_type=<SchedulerType.CONSTANT: 'constant'>, warmup_ratio=0.03, warmup_steps=0, log_level='passive', log_level_replica='warning', log_on_each_node=True, logging_dir='./output/runs/Oct23_17-58-57_09376-23-1158W', logging_strategy=<IntervalStrategy.STEPS: 'steps'>, logging_first_step=False, logging_steps=10, logging_nan_inf_filter=True, save_strategy=<IntervalStrategy.STEPS: 'steps'>, save_steps=250, save_total_limit=40, save_safetensors=False, save_on_each_node=False, no_cuda=False, use_mps_device=False, seed=42, data_seed=None, jit_mode_eval=False, use_ipex=False, bf16=False, fp16=False, fp16_opt_level='O1', half_precision_backend='auto', bf16_full_eval=False, fp16_full_eval=False, tf32=None, local_rank=0, ddp_backend=None, tpu_num_cores=None, tpu_metrics_debug=False, debug=[], dataloader_drop_last=False, eval_steps=None, dataloader_num_workers=0, past_index=-1, run_name='./output', disable_tqdm=False, remove_unused_columns=False, label_names=None, load_best_model_at_end=False, metric_for_best_model=None, greater_is_better=None, ignore_data_skip=False, sharded_ddp=[], fsdp=[], fsdp_min_num_params=0, fsdp_config={'fsdp_min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False}, fsdp_transformer_layer_cls_to_wrap=None, deepspeed=None, label_smoothing_factor=0.0, optim=<OptimizerNames.PAGED_ADAMW: 'paged_adamw_32bit'>, optim_args=None, adafactor=False, group_by_length=True, length_column_name='length', report_to=[], ddp_find_unused_parameters=None, ddp_bucket_cap_mb=None, ddp_broadcast_buffers=None, dataloader_pin_memory=True, skip_memory_metrics=True, use_legacy_prediction_loop=False, push_to_hub=False, resume_from_checkpoint=None, hub_model_id=None, hub_strategy=<HubStrategy.EVERY_SAVE: 'every_save'>, hub_token=None, hub_private_repo=False, gradient_checkpointing=True, include_inputs_for_metrics=False, fp16_backend='auto', push_to_hub_model_id=None, push_to_hub_organization=None, push_to_hub_token=None, mp_parameters='', auto_find_batch_size=False, full_determinism=False, torchdynamo=None, ray_scope='last', ddp_timeout=1800, torch_compile=False, torch_compile_backend=None, torch_compile_mode=None, xpu_backend=None, sortish_sampler=False, predict_with_generate=False, generation_max_length=None, generation_num_beams=None, generation_config=GenerationConfig {
+  "max_new_tokens": 256,
+  "transformers_version": "4.31.0"
+}
+, cache_dir=None, train_on_source=False, mmlu_split='eval', mmlu_dataset='mmlu-fs', do_mmlu_eval=False, max_mmlu_samples=None, mmlu_source_max_len=2048, full_finetune=False, adam8bit=False, double_quant=True, quant_type='nf4', bits=4, lora_r=64, lora_alpha=16, lora_dropout=0.0, max_memory_MB=80000, distributed_state=Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+, _n_gpu=1, __cached__setup_devices=device(type='cuda', index=0), deepspeed_plugin=None)
+loading base model EleutherAI/pythia-12b...
+/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+config.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 571/571 [00:00<00:00, 3.83MB/s]
+/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/transformers/modeling_utils.py:2193: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+model.safetensors.index.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 49.4k/49.4k [00:00<00:00, 380kB/s]
+model-00001-of-00003.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9.81G/9.81G [02:35<00:00, 63.3MB/s]
+model-00002-of-00003.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9.93G/9.93G [02:08<00:00, 77.2MB/s]
+model-00003-of-00003.safetensors: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4.11G/4.11G [00:48<00:00, 84.9MB/s]
+Downloading shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [05:34<00:00, 111.46s/it]
+Loading checkpoint shards:   0%|                                                                                                                                                                                       | 0/3 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/teramatsu/git/qlora/qlora.py", line 841, in <module>
+    train()
+  File "/home/teramatsu/git/qlora/qlora.py", line 704, in train
+    model, tokenizer = get_accelerate_model(args, checkpoint_dir)
+  File "/home/teramatsu/git/qlora/qlora.py", line 311, in get_accelerate_model
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 493, in from_pretrained
+    return model_class.from_pretrained(
+  File "/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/transformers/modeling_utils.py", line 2903, in from_pretrained
+    ) = cls._load_pretrained_model(
+  File "/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3260, in _load_pretrained_model
+    new_error_msgs, offload_index, state_dict_index = _load_state_dict_into_meta_model(
+  File "/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/transformers/modeling_utils.py", line 725, in _load_state_dict_into_meta_model
+    set_module_quantized_tensor_to_device(
+  File "/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/transformers/utils/bitsandbytes.py", line 99, in set_module_quantized_tensor_to_device
+    new_value = bnb.nn.Params4bit(new_value, requires_grad=False, **kwargs).to(device)
+  File "/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/nn/modules.py", line 178, in to
+    return self.cuda(device)
+  File "/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/nn/modules.py", line 156, in cuda
+    w_4bit, quant_state = bnb.functional.quantize_4bit(w, blocksize=self.blocksize, compress_statistics=self.compress_statistics, quant_type=self.quant_type)
+  File "/home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/functional.py", line 819, in quantize_4bit
+    lib.cquantize_blockwise_fp16_nf4(get_ptr(None), get_ptr(A), get_ptr(absmax), get_ptr(out), ct.c_int32(blocksize), ct.c_int(n))
+  File "/home/teramatsu/miniconda3/envs/gua/lib/python3.10/ctypes/__init__.py", line 387, in __getattr__
+    func = self.__getitem__(name)
+  File "/home/teramatsu/miniconda3/envs/gua/lib/python3.10/ctypes/__init__.py", line 392, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /home/teramatsu/miniconda3/envs/gua/lib/python3.10/site-packages/bitsandbytes/libbitsandbytes_cpu.so: undefined symbol: cquantize_blockwise_fp16_nf4
+scripts/finetune_guanaco_65b.sh: 2: --model_name_or_path: not found
+scripts/finetune_guanaco_65b.sh: 3: --output_dir: not found
+scripts/finetune_guanaco_65b.sh: 4: --logging_steps: not found
+scripts/finetune_guanaco_65b.sh: 5: --save_strategy: not found
+scripts/finetune_guanaco_65b.sh: 6: --data_seed: not found
+scripts/finetune_guanaco_65b.sh: 7: --save_steps: not found
+scripts/finetune_guanaco_65b.sh: 8: --save_total_limit: not found
+scripts/finetune_guanaco_65b.sh: 9: --evaluation_strategy: not found
+scripts/finetune_guanaco_65b.sh: 10: --eval_dataset_size: not found
+scripts/finetune_guanaco_65b.sh: 11: --max_eval_samples: not found
+scripts/finetune_guanaco_65b.sh: 12: --per_device_eval_batch_size: not found
+scripts/finetune_guanaco_65b.sh: 13: --max_new_tokens: not found
+scripts/finetune_guanaco_65b.sh: 14: --dataloader_num_workers: not found
+scripts/finetune_guanaco_65b.sh: 15: --group_by_length: not found
+scripts/finetune_guanaco_65b.sh: 16: --logging_strategy: not found
+scripts/finetune_guanaco_65b.sh: 17: --remove_unused_columns: not found
+scripts/finetune_guanaco_65b.sh: 18: --do_train: not found
+scripts/finetune_guanaco_65b.sh: 19: --do_eval: not found
+scripts/finetune_guanaco_65b.sh: 20: --do_mmlu_eval: not found
+scripts/finetune_guanaco_65b.sh: 21: --lora_r: not found
+scripts/finetune_guanaco_65b.sh: 22: --lora_alpha: not found
+scripts/finetune_guanaco_65b.sh: 23: --lora_modules: not found
+scripts/finetune_guanaco_65b.sh: 24: --double_quant: not found
+scripts/finetune_guanaco_65b.sh: 25: --quant_type: not found
+scripts/finetune_guanaco_65b.sh: 26: --bf16: not found
+scripts/finetune_guanaco_65b.sh: 27: --bits: not found
+scripts/finetune_guanaco_65b.sh: 28: --warmup_ratio: not found
+scripts/finetune_guanaco_65b.sh: 29: --lr_scheduler_type: not found
+scripts/finetune_guanaco_65b.sh: 30: --gradient_checkpointing: not found
+scripts/finetune_guanaco_65b.sh: 31: --dataset: not found
+scripts/finetune_guanaco_65b.sh: 32: --source_max_len: not found
+scripts/finetune_guanaco_65b.sh: 33: --target_max_len: not found
+scripts/finetune_guanaco_65b.sh: 34: --per_device_train_batch_size: not found
+scripts/finetune_guanaco_65b.sh: 35: --gradient_accumulation_steps: not found
+scripts/finetune_guanaco_65b.sh: 36: --max_steps: not found
+scripts/finetune_guanaco_65b.sh: 37: --eval_steps: not found
+scripts/finetune_guanaco_65b.sh: 38: --learning_rate: not found
+scripts/finetune_guanaco_65b.sh: 39: --adam_beta2: not found
+scripts/finetune_guanaco_65b.sh: 40: --max_grad_norm: not found
+scripts/finetune_guanaco_65b.sh: 41: --lora_dropout: not found
+scripts/finetune_guanaco_65b.sh: 42: --weight_decay: not found
+scripts/finetune_guanaco_65b.sh: 43: --seed: not found

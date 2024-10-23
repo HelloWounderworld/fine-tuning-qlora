@@ -113,6 +113,8 @@ Article where I based
 
 ## Articles that I based to make Fine Tuning:
 
+    https://medium.com/@dillipprasad60/qlora-explained-a-deep-dive-into-parametric-efficient-fine-tuning-in-large-language-models-llms-c1a4794b1766
+
     https://medium.com/@harsh.vardhan7695/fine-tuning-llama-2-using-lora-and-qlora-a-comprehensive-guide-fd2260f0aa5f
 
     https://medium.com/@givkashi/fine-tuning-llama-2-model-with-qlora-on-a-custom-dataset-33126b94dee5
@@ -131,6 +133,10 @@ Article where I based
 
     https://note.com/kan_hatakeyama/n/ncd09c52d26c7
 
+TIP: Is going to be necessary to see python version... I'm using 3.13.0... to much current...
+
+At the conda virtual environment I'm used python3.10.15
+
 1. Download qLora library using git:
 
 2. Installing miniconda
@@ -146,20 +152,90 @@ Article where I based
 
         conda init --all
 
-        conda create -n gua
+        conda create -n meu_ambiente python=3.10
         conda activate gua
         conda install pip
 
         cd qlora
         pip install -U -r requirements.txt
 
+    Let check if qLora is working, inside qlora, directory (this need setting at the google colab)
+
+        cd examples
+        guanaco_7B_demo_colab.ipynb
+
+        pip install scikit-learn --no-build-isolation
+        Requirement already satisfied: scikit-learn in /home/teramatsu/miniconda3/envs/gua/lib/python3.13/site-packages (1.5.2)
+        Requirement already satisfied: numpy>=1.19.5 in /home/teramatsu/miniconda3/envs/gua/lib/python3.13/site-packages (from scikit-learn) (2.1.2)
+        Requirement already satisfied: scipy>=1.6.0 in /home/teramatsu/miniconda3/envs/gua/lib/python3.13/site-packages (from scikit-learn) (1.14.1)
+        Requirement already satisfied: joblib>=1.2.0 in /home/teramatsu/miniconda3/envs/gua/lib/python3.13/site-packages (from scikit-learn) (1.4.2)
+        Requirement already satisfied: threadpoolctl>=3.1.0 in /home/teramatsu/miniconda3/envs/gua/lib/python3.13/site-packages (from scikit-learn) (3.5.0)
+
+    If necessary
+
+        conda remove --name meu_ambiente --all
+
 2. Active virtual environment using python
 
 3. To install libraries at the requirements.txt file:
 
+    https://github.com/scikit-learn/scikit-learn/issues/26858
+
     TIP: https://scikit-learn.org/stable/install.html
 
 4. Setting parameters to train:
+
+    Download, in first place, the Fugaku.
+
+    At this link, https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct-gguf, you have to download
+
+        Fugaku-LLM-13B-instruct-0325b-q5_k_m.gguf
+
+    And at this link, https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B/tree/main, you have to download the following (Nao sei se foi util, tentar fazer isso com o comando, sh scripts/finetune_guanaco_65b.sh)
+
+        config.json
+        pytorch_model.bin.index.json
+        special_tokens_map.json
+        tokenizer_config.json
+        tokenizer.json
+        pytorch_model-00001-of-00006.bin
+        pytorch_model-00002-of-00006.bin
+        pytorch_model-00003-of-00006.bin
+        pytorch_model-00004-of-00006.bin
+        pytorch_model-00005-of-00006.bin
+        pytorch_model-00006-of-00006.bin
+
+    And at this link, https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct/tree/main, you have to download the following
+
+        config.json
+        generation_config.json
+        special_tokens_map.json
+        tokenizer_config.json
+        tokenizer.json
+        model.safetensors.index.json
+        trainer_state.json
+        training_args.bin
+        model-00001-of-00006.safetensors
+        model-00002-of-00006.safetensors
+        model-00003-of-00006.safetensors
+        model-00004-of-00006.safetensors
+        model-00005-of-00006.safetensors
+        model-00006-of-00006.safetensors
+
+    And put out all these files inside model, directory
+
+        python qlora.py \
+            --model_name_or_path model/Fugaku-LLM-13B-instruct-0325b-q5_k_m.gguf
+            --output_dir ./result/test_peft \
+            --dataset_name shi3z/anthropic_hh_rlhf_japanese\
+
+    or
+
+        sh scripts/finetune_guanaco_65b.sh 
+
+    For models larger than 13B, we recommend adjusting the learning rate:
+
+        python qlora.py –learning_rate 0.0001 --model_name_or_path <path_or_name>
 
         python qlora.py \
             --model_name meta-llama/Llama-2-70b-hf \
