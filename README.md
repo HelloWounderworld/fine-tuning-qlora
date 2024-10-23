@@ -135,23 +135,23 @@ Article where I based
 
 2. Installing miniconda
 
-    https://docs.anaconda.com/miniconda/miniconda-install/
+        https://docs.anaconda.com/miniconda/miniconda-install/
 
-    mkdir -p ~/miniconda3
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-    bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-    rm ~/miniconda3/miniconda.
-    
-    source ~/miniconda3/bin/activate
+        mkdir -p ~/miniconda3
+        wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+        bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+        rm ~/miniconda3/miniconda.
+        
+        source ~/miniconda3/bin/activate
 
-    conda init --all
+        conda init --all
 
-    conda create -n gua
-    conda activate gua
-    conda install pip
+        conda create -n gua
+        conda activate gua
+        conda install pip
 
-    cd qlora
-    pip install -U -r requirements.txt
+        cd qlora
+        pip install -U -r requirements.txt
 
 2. Active virtual environment using python
 
