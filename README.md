@@ -58,7 +58,7 @@ Article where I based
 
     And now, you can install
 
-        pip install torch transformers accelerate
+        pip install -q accelerate==0.26.1 peft==0.4.0 bitsandbytes==0.42.0 transformers==4.36.2 trl==0.4.7 datasets==2.16.1
 
     If you have a requirements.txt, just copy it inside of virtual environment directory and run following command
 
@@ -130,6 +130,83 @@ Article where I based
     https://note.com/npaka/n/nfa56b035c178
 
     https://note.com/kan_hatakeyama/n/ncd09c52d26c7
+
+1. Download qLora library using git:
+
+2. Installing miniconda
+
+    https://docs.anaconda.com/miniconda/miniconda-install/
+
+    mkdir -p ~/miniconda3
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+    bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+    rm ~/miniconda3/miniconda.
+    
+    source ~/miniconda3/bin/activate
+
+    conda init --all
+
+    conda create -n gua
+    conda activate gua
+    conda install pip
+
+    cd qlora
+    pip install -U -r requirements.txt
+
+2. Active virtual environment using python
+
+3. To install libraries at the requirements.txt file:
+
+    TIP: https://scikit-learn.org/stable/install.html
+
+4. Setting parameters to train:
+
+        python qlora.py \
+            --model_name meta-llama/Llama-2-70b-hf \
+            --output_dir ./output/test_peft \
+            --dataset_name shi3z/anthropic_hh_rlhf_japanese\
+            --max_steps 1000 \
+            --use_auth \
+            --logging_steps 10 \
+            --save_strategy steps \
+            --data_seed 42 \
+            --save_steps 50 \
+            --save_total_limit 40 \
+            --max_new_tokens 32 \
+            --dataloader_num_workers 1 \
+            --group_by_length \
+            --logging_strategy steps \
+            --remove_unused_columns False \
+            --do_train \
+            --lora_r 64 \
+            --lora_alpha 16 \
+            --lora_modules all \
+            --double_quant \
+            --quant_type nf4 \
+            --bf16 \
+            --bits 4 \
+            --warmup_ratio 0.03 \
+            --lr_scheduler_type constant \
+            --gradient_checkpointing \
+            --dataset hh-rlhf \
+            --source_max_len 16 \
+            --target_max_len 512 \
+            --per_device_train_batch_size 1 \
+            --gradient_accumulation_steps 16 \
+            --eval_steps 187 \
+            --learning_rate 0.0002 \
+            --adam_beta2 0.999 \
+            --max_grad_norm 0.3 \
+            --lora_dropout 0.1 \
+            --weight_decay 0.0 \
+            --seed 0 \
+            --load_in_4bit \
+            --use_peft \
+            --batch_size 4 \
+            --gradient_accumulation_steps 2 \
+            --output_dir peft_test
+
+5. Initialize training:
 
 ## Creating an Interactive Chat by Ollama:
 
