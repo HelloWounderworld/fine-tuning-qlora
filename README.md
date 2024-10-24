@@ -139,7 +139,7 @@ At the conda virtual environment I'm used python3.10.15
 
 1. Download qLora library using git:
 
-2. Installing miniconda
+2. Installing miniconda (talvez nao precise, pois creio que seja a versao do python que permite ou nao a instalacao)
 
         https://docs.anaconda.com/miniconda/miniconda-install/
 
@@ -174,6 +174,23 @@ At the conda virtual environment I'm used python3.10.15
     If necessary
 
         conda remove --name meu_ambiente --all
+
+2. Install Pyenv:
+
+    We are going to use this service to make possible the installation of a specific python version inside of a virtual environment
+
+        https://ericsysmin.com/2024/01/11/how-to-install-pyenv-on-ubuntu-22-04/
+
+    Definir a Versão Global ou Local:
+
+        pyenv global 3.x.x  # Para definir globalmente
+        pyenv local 3.x.x   # Para definir para um projeto específico
+
+    Criar o Ambiente Virtual
+
+        python3.x -m venv nome_do_ambiente
+
+        python3.10 -m venv meu_ambiente
 
 2. Active virtual environment using python
 
