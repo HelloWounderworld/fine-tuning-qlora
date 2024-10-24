@@ -1,6 +1,7 @@
-bitsandbytes==0.40.0
-numpy==1.23.5
+bitsandbytes==0.44.1
+huggingface_hub[cli]
 transformers==4.31.0
+numpy==1.23.5
 peft==0.4.0
 accelerate==0.21.0
 einops==0.6.1

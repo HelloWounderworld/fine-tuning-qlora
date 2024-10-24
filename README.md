@@ -202,6 +202,14 @@ At the conda virtual environment I'm used python3.10.15
 
 4. Setting parameters to train:
 
+    You have to build an access token
+
+        https://huggingface.co/docs/hub/security-tokens
+
+    If you are using any shared stored space, you can set cache_dir to organize LLM's that you are donwloading
+
+        https://github.com/vllm-project/vllm/issues/764
+
     Download, in first place, the Fugaku.
 
     At this link, https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct-gguf, you have to download
@@ -239,12 +247,17 @@ At the conda virtual environment I'm used python3.10.15
         model-00005-of-00006.safetensors
         model-00006-of-00006.safetensors
 
+    You have to set access token to make download with qlora.py.... where can I set this access token?
+
+    Maybe I have to make install, using pip, hugging-face cli to make login by this token
+
+        https://huggingface.co/docs/huggingface_hub/guides/cli
+
     And put out all these files inside model, directory
 
-        python qlora.py \
-            --model_name_or_path model/Fugaku-LLM-13B-instruct-0325b-q5_k_m.gguf
-            --output_dir ./result/test_peft \
-            --dataset_name shi3z/anthropic_hh_rlhf_japanese\
+        python qlora.py –learning_rate 0.0001 --model_name_or_path Fugaku-LLM/Fugaku-LLM-13B-instruct-0325b-q5_k_m.gguf \
+            --use_auth_token 
+            --output_dir ./result/test_peft
 
     or
 
@@ -255,7 +268,7 @@ At the conda virtual environment I'm used python3.10.15
         python qlora.py –learning_rate 0.0001 --model_name_or_path <path_or_name>
 
         python qlora.py \
-            --model_name meta-llama/Llama-2-70b-hf \
+            --model_name model/Fugaku-LLM-13B-instruct-0325b-q5_k_m.gguf \
             --output_dir ./output/test_peft \
             --dataset_name shi3z/anthropic_hh_rlhf_japanese\
             --max_steps 1000 \
