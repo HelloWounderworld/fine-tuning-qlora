@@ -348,6 +348,7 @@ At the conda virtual environment I'm used python3.10.15
 24. [Phi-3 - FineTuning][24]
 25. [Ollama modelfile.txt parameters settings][25]
 26. [Curiosity about Content Creation using LLM Open Source Model][26]
+27. [Clustering][27]
 
 [1]: https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct
 [2]: https://github.com/Fugaku-LLM/DeepSpeedFugaku
@@ -375,3 +376,4 @@ At the conda virtual environment I'm used python3.10.15
 [24]: https://zenn.dev/headwaters/articles/55f648399c1820
 [25]: https://github.com/ollama/ollama/blob/main/docs/modelfile.md#parameter
 [26]: https://byrayray.medium.com/llama-3-2-vs-llama-3-1-vs-gemma-2-finding-the-best-open-source-llm-for-content-creation-1f6085c9f87a
+[27]: https://www.ibm.com/topics/clustering
