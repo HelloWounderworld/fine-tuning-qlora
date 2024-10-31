@@ -141,6 +141,14 @@ At the conda virtual environment I'm used python3.10.15
 
 2. Setting CUDA, nvidia-cuda-toolkit, with the same version of your GPU:
 
+    https://hub.docker.com/r/nvidia/cuda
+
+    https://hub.docker.com/layers/nvidia/cuda/12.2.0-runtime-ubuntu20.04/images/sha256-3faf586290da5a86115cbf907f3a34ba48e97875a8e148fa969ddaa6b1472b93
+
+    https://docs.docker.com/compose/how-tos/gpu-support/
+    
+    https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
+
     Check the version
 
         nvidia-smi
@@ -410,6 +418,10 @@ At the conda virtual environment I'm used python3.10.15
 25. [Ollama modelfile.txt parameters settings][25]
 26. [Curiosity about Content Creation using LLM Open Source Model][26]
 27. [Clustering][27]
+28. [Docker Hub Nvidia/CUDA][28]
+29. [Docker Hub Nvida CUDA 12.2][29]
+30. [Setting Nvida Docker Compose][30]
+31. [Setting Nvidia Docker compose Github][31]
 
 [1]: https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct
 [2]: https://github.com/Fugaku-LLM/DeepSpeedFugaku
@@ -438,3 +450,7 @@ At the conda virtual environment I'm used python3.10.15
 [25]: https://github.com/ollama/ollama/blob/main/docs/modelfile.md#parameter
 [26]: https://byrayray.medium.com/llama-3-2-vs-llama-3-1-vs-gemma-2-finding-the-best-open-source-llm-for-content-creation-1f6085c9f87a
 [27]: https://www.ibm.com/topics/clustering
+[28]: https://hub.docker.com/r/nvidia/cuda
+[29]: https://hub.docker.com/layers/nvidia/cuda/12.2.0-runtime-ubuntu20.04/images/sha256-3faf586290da5a86115cbf907f3a34ba48e97875a8e148fa969ddaa6b1472b93
+[30]: https://docs.docker.com/compose/how-tos/gpu-support/
+[31]: https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
