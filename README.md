@@ -146,7 +146,7 @@ At the conda virtual environment I'm used python3.10.15
     https://hub.docker.com/layers/nvidia/cuda/12.2.0-runtime-ubuntu20.04/images/sha256-3faf586290da5a86115cbf907f3a34ba48e97875a8e148fa969ddaa6b1472b93
 
     https://docs.docker.com/compose/how-tos/gpu-support/
-    
+
     https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
 
     Check the version
@@ -160,6 +160,10 @@ At the conda virtual environment I'm used python3.10.15
     Install nvidia-cuda-toolkit by following link, "nvidia cuda toolkit download 12.x"
 
         https://developer.nvidia.com/cuda-12-2-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local
+
+    After that you can install nvidia cuda toolkit
+
+        sudo apt-get install nvidia-cuda-toolkit
 
 2. Installing miniconda (talvez nao precise, pois creio que seja a versao do python que permite ou nao a instalacao)
 
