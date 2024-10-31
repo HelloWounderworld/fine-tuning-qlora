@@ -149,7 +149,7 @@ At the conda virtual environment I'm used python3.10.15
 
         nvcc --version
 
-    Install nvidia-cuda-toolkit by following link
+    Install nvidia-cuda-toolkit by following link, "nvidia cuda toolkit download 12.x"
 
         https://developer.nvidia.com/cuda-12-2-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local
 
