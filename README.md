@@ -139,6 +139,20 @@ At the conda virtual environment I'm used python3.10.15
 
 1. Download qLora library using git:
 
+2. Setting CUDA, nvidia-cuda-toolkit, with the same version of your GPU:
+
+    Check the version
+
+        nvidia-smi
+
+    Check if there is any CUDA
+
+        nvcc --version
+
+    Install nvidia-cuda-toolkit by following link
+
+        https://developer.nvidia.com/cuda-12-2-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local
+
 2. Installing miniconda (talvez nao precise, pois creio que seja a versao do python que permite ou nao a instalacao)
 
         https://docs.anaconda.com/miniconda/miniconda-install/
