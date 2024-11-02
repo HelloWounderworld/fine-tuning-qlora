@@ -1,1 +1,12 @@
 version: '3.9'
+
+services:
+  test:
+    image: nvidia/cuda:12.1.0-base-ubuntu22.04
+    command: nvidia-smi
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]

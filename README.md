@@ -426,6 +426,7 @@ At the conda virtual environment I'm used python3.10.15
 29. [Docker Hub Nvida CUDA 12.2][29]
 30. [Setting Nvida Docker Compose][30]
 31. [Setting Nvidia Docker compose Github][31]
+32. [Nvidia Container Toolkit][32]
 
 [1]: https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct
 [2]: https://github.com/Fugaku-LLM/DeepSpeedFugaku
@@ -458,3 +459,4 @@ At the conda virtual environment I'm used python3.10.15
 [29]: https://hub.docker.com/layers/nvidia/cuda/12.2.0-runtime-ubuntu20.04/images/sha256-3faf586290da5a86115cbf907f3a34ba48e97875a8e148fa969ddaa6b1472b93
 [30]: https://docs.docker.com/compose/how-tos/gpu-support/
 [31]: https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
+[32]: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
