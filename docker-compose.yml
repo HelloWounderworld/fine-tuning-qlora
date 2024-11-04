@@ -10,3 +10,12 @@ services:
           devices:
           - driver: nvidia
             capabilities: [gpu]
+  fine-tuning-llm:
+    image: Dockerfile
+    build: .
+    environment:
+      - name=value
+    ports:
+      - ${API_LLM_PORT}:3000
+    volumes:
+      - ./:$HOME

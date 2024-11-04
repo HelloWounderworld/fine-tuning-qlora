@@ -33,9 +33,12 @@ RUN apt-get update \
     && apt-get update \
     && apt-get upgrade -y
 
-# Install Python with 3.10 version and install Pyenv
+# Install Python with 3.10 version, install Pyenv and activate python virtual environment
 
 WORKDIR $HOME
+
+COPY . .
+
 RUN python --version \
     && apt-get install make build-essential libssl-dev \
     zlib1g-dev \
