@@ -83,6 +83,13 @@ WORKDIR /teramatsu/qlora
 
 RUN apt-get update \
     && apt-get -y upgrade \
+    && mv /var/lib/dpkg/info /var/lib/dpkg/info_silent \
+    && mkdir /var/lib/dpkg/info \
+    && apt-get update \
+    && apt-get -f install \
+    && mv /var/lib/dpkg/info/* /var/lib/dpkg/info_silent \
+    && rm -rf /var/lib/dpkg/info \
+    && mv /var/lib/dpkg/info_silent /var/lib/dpkg/info \
     && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin \
     && mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600 \
     && wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb \
