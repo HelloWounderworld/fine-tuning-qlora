@@ -89,8 +89,8 @@ RUN apt-get update \
     && cp /var/cuda-repo-ubuntu2204-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings/ \
     && apt-get update \
     && apt-get -y install cuda \
-    && export PATH=/usr/local/cuda/bin${PATH:+:${PATH}} \
-    && export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} \
+    && echo 'export PATH="/usr/local/cuda/bin${PATH:+:${PATH}}"' \
+    && echo 'export LD_LIBRARY_PATH="/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"' \
     && source ~/.bashrc \
     && nvcc --version \
     && && python3.10 -m venv .venv \
