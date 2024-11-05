@@ -75,6 +75,7 @@ RUN git clone https://github.com/pyenv/pyenv.git ${PYENV_ROOT} \
     && CFLAGS=-I/usr/include LDFLAGS=-L/usr/lib pyenv install -v ${PYTHON_VERSION} \
     && pyenv global ${PYTHON_VERSION} \
     && pyenv rehash \
+    && python --version \
     && pip install --upgrade pip
 
 # Install CUDA
@@ -93,7 +94,7 @@ RUN apt-get update \
     && echo 'export LD_LIBRARY_PATH="/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"' \
     && source ~/.bashrc \
     && nvcc --version \
-    && && python3.10 -m venv .venv \
+    && python -m venv .venv \
     && source .venv/bin/activate \
     && pip install -U -r requirements.txt \
     && pip freeze > requirements.txt
