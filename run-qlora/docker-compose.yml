@@ -16,6 +16,8 @@ services:
       args:
         UID: ${UID}
         USERNAME: ${USERNAME}
+        GID: ${GID}
+        GROUPNAME: ${GROUPNAME}
         HTTP_PROXY: ${HTTP_PROXY:-}
         HTTPS_PROXY: ${HTTPS_PROXY:-}
         FTP_PROXY: ${FTP_PROXY:-}
