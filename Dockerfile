@@ -8,56 +8,88 @@ ARG GROUPNAME
 RUN groupadd -g ${GID} ${GROUPNAME} && useradd -m -s /bin/bash -u ${UID} -g ${GID} ${USERNAME}
 
 ARG DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install --assume-yes --no-install-recommends ca-certificates
+ENV GIT_SSL_NO_VERIFY=true
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONUTF8=1
+ENV PIP_NO_CACHE_DIR=off
 
 # COPY sources.list /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y \
+    && apt-get install --assume-yes --no-install-recommends \
+    ca-certificates \
+    build-essential \
+    git \
     nano \
     curl \
     wget \
     gnupg2 \
     lsb-release \
-    ubuntu-keyring \
-    && curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
-    | tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null \
-    && echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \
-    | tee /etc/apt/sources.list.d/nginx.list \
-    && echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" \
-    | tee /etc/apt/preferences.d/99nginx \
-    && apt-get update \
-    && apt-get upgrade -y
-
-# Install Python with 3.10 version, install Pyenv and activate python virtual environment
-
-WORKDIR $HOME
-
-COPY . .
-
-RUN python --version \
-    && apt-get install make build-essential libssl-dev \
+    libssl-dev \
     zlib1g-dev \
     libbz2-dev \
     libreadline-dev \
     libsqlite3-dev \
     llvm \
+    libncurses5-dev \
     libncursesw5-dev \
-    xz-utils tk-dev \
+    xz-utils \
+    tk-dev \
     libxml2-dev \
     libxmlsec1-dev \
     libffi-dev \
     liblzma-dev \
-    && curl https://pyenv.run | bash \
-    && export PYENV_ROOT="$HOME/.pyenv" \
-    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH" \
-    eval "$(pyenv init -)" \
+    python3-openssl \
+    libopenblas-base \
+    libopenblas-dev \
+    logrotate \
+    less \
+    sudo
+
+# set locale to ja_JP
+# ENV LANG=ja_JP.UTF-8
+# ENV LANGUAGE=ja_JP:ja
+# ENV TZ Asia/Tokyo
+# RUN update-locale LANG=ja_JP.UTF-8 \
+#     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+#     && echo > /etc/timezone
+
+# Install Ollama
+# RUN chmod 777 /opt \
+#     && curl -fsSL https://ollama.com/install.sh | sh
+
+# Install Python with 3.10 version, install Pyenv or activate python virtual environment
+
+WORKDIR /opt
+
+ENV PYENV_ROOT /opt/.pyenv
+ENV PATH ${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}
+ARG PYTHON_VERSION=3.10.15
+RUN git clone https://github.com/pyenv/pyenv.git ${PYENV_ROOT} \
+    && echo 'export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}"' >> ~/.bashrc \
+    && echo 'eval "$(pyenv init -)"' >> ~/.bashrc \
+    && eval "$(pyenv init -)" \
     && source ~/.bashrc \
-    && pyenv local 3.10.15 \
-    && python --version \
+    && CFLAGS=-I/usr/include LDFLAGS=-L/usr/lib pyenv install -v ${PYTHON_VERSION} \
+    && pyenv global ${PYTHON_VERSION} \
+    && pyenv rehash \
+    && pip install --upgrade pip
+
+# Install CUDA
+WORKDIR /teramatsu/qlora
+
+RUN apt-get update \
+    && apt-get -y upgrade \
+    && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin \
+    && mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600 \
+    && wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb \
+    && dpkg -i cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb \
+    && cp /var/cuda-repo-ubuntu2204-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings/ \
     && apt-get update \
-    && apt-get -y upgrade
+    && apt-get -y install cuda \
+    && export PATH=/usr/local/cuda/bin${PATH:+:${PATH}} \
+    && export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} \
+    && source ~/.bashrc \
+    && nvcc --version

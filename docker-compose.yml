@@ -1,21 +1,47 @@
 version: '3.9'
 
 services:
-  test:
-    image: nvidia/cuda:12.1.0-base-ubuntu22.04
-    command: nvidia-smi
+  fine-tuning-llm-qlora:
+    container_name: fine-tuning-llm-app-qlora
+    hostname: fine-tuing-llm-qlora
     deploy:
       resources:
         reservations:
           devices:
           - driver: nvidia
             capabilities: [gpu]
-  fine-tuning-llm:
-    image: Dockerfile
-    build: .
+    build:
+      context: .
+      dockerfile: dockerfile
+      args:
+        UID: ${UID}
+        USERNAME: ${USERNAME}
+        HTTP_PROXY: ${HTTP_PROXY:-}
+        HTTPS_PROXY: ${HTTPS_PROXY:-}
+        FTP_PROXY: ${FTP_PROXY:-}
+        NO_PROXY: ${NO_PROXY:-}
+        http_proxy: ${HTTP_PROXY:-}
+        https_proxy: ${HTTPS_PROXY:-}
+        ftp_proxy: ${FTP_PROXY:-}
+        no_proxy: ${NO_PROXY:-}
     environment:
-      - name=value
+      HTPP_PROXY: ${HTPP_PROXY:-}
+      HTTPS_PROXY: ${HTTPS_PROXY:-}
+      FTP_PROXY: ${FTP_PROXY:-}
+      NO_PROXY: ${NO_PROXY:-}
+      http_proxy: ${HTTP_PROXY:-}
+      https_proxy: ${HTTPS_PROXY:-}
+      ftp_proxy: ${FTP_PROXY:-}
+      no_proxy: ${NO_PROXY:-}
     ports:
-      - ${API_LLM_PORT}:3000
+      - ${API_LLM_PORT}:8000
+    user: ${USERNAME}
+    working_dir: /teramatsu/qlora
     volumes:
-      - ./:$HOME
+      - ./:/teramatsu/qlora
+    tty: true
+    logging:
+      driver: json-file
+      options:
+        max-file: '5'
+        max-size: '10m'
