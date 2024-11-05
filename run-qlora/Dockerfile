@@ -92,4 +92,8 @@ RUN apt-get update \
     && export PATH=/usr/local/cuda/bin${PATH:+:${PATH}} \
     && export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} \
     && source ~/.bashrc \
-    && nvcc --version
+    && nvcc --version \
+    && && python3.10 -m venv .venv \
+    && source .venv/bin/activate \
+    && pip install -U -r requirements.txt \
+    && pip freeze > requirements.txt
