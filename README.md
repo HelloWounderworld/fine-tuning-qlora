@@ -163,7 +163,7 @@ At the conda virtual environment I'm used python3.10.15
 
         nvidia-smi
 
-    Check if there is any CUDA
+    Check whether there is any nvidia-cuda-toolkit installed
 
         nvcc --version
 
@@ -174,6 +174,12 @@ At the conda virtual environment I'm used python3.10.15
     After that you can install nvidia cuda toolkit
 
         sudo apt-get install nvidia-cuda-toolkit
+
+    Or there is, and I prefer, another way to make setting this nvidia-cuda-toolkit, using environments variables
+
+        export PATH=/usr/local/cuda/bin:${PATH:+:${PATH}}
+
+        export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 2. Check if cuda is working:
 
