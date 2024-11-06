@@ -137,6 +137,16 @@ TIP: Is going to be necessary to see python version... I'm using 3.13.0... to mu
 
 At the conda virtual environment I'm used python3.10.15
 
+1. Configure Ubuntu environment to make possible container's runs:
+
+        https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+
+1. Docker Proxy configuration:
+
+        https://docs.docker.com/engine/daemon/proxy/
+
+        https://docs.docker.com/engine/cli/proxy/
+
 1. Download qLora library using git:
 
 2. Setting CUDA, nvidia-cuda-toolkit, with the same version of your GPU:
