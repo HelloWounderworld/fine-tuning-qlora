@@ -175,6 +175,12 @@ At the conda virtual environment I'm used python3.10.15
 
         sudo apt-get install nvidia-cuda-toolkit
 
+2. Check if cuda is working:
+
+        https://xcat-docs.readthedocs.io/en/stable/advanced/gpu/nvidia/verify_cuda_install.html
+
+        https://rightcode.co.jp/blogs/12323
+
 2. Installing miniconda (talvez nao precise, pois creio que seja a versao do python que permite ou nao a instalacao)
 
         https://docs.anaconda.com/miniconda/miniconda-install/
