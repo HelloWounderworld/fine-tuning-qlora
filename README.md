@@ -165,6 +165,10 @@ At the conda virtual environment I'm used python3.10.15
 
     https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
 
+    Root level
+
+        sudo -i
+
     Check the version
 
         nvidia-smi
