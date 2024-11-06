@@ -451,6 +451,7 @@ At the conda virtual environment I'm used python3.10.15
 32. [Nvidia Container Toolkit][32]
 33. [Setting proxy at the .bashrc][33]
 34. [Setting proxy at the .bashrc][34]
+35. [Simple test whether CUDA/GPU is working using Pytorch][35]
 
 [1]: https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct
 [2]: https://github.com/Fugaku-LLM/DeepSpeedFugaku
@@ -486,3 +487,4 @@ At the conda virtual environment I'm used python3.10.15
 [32]: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
 [33]: https://qiita.com/Fal318/items/338521feb42197a3aee5
 [34]: https://qiita.com/nullsnet/items/66590b0ff33e15db7532
+[35]: https://stackoverflow.com/questions/48152674/how-do-i-check-if-pytorch-is-using-the-gpu
