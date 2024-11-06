@@ -20,6 +20,7 @@ print(f"Device name used GPU3: {torch.cuda.get_device_name(3)}")
 
 # Defining the GPU that you want to use
 device = torch.device("cuda:1")
+print(f"GPU choice: {device}")
 
 # Current GPU device used
 print(f"Current GPU used: {torch.cuda.current_device()}")
