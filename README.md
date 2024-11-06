@@ -137,6 +137,12 @@ TIP: Is going to be necessary to see python version... I'm using 3.13.0... to mu
 
 At the conda virtual environment I'm used python3.10.15
 
+1. Check if Nvidia driver and nvidia-cuda-toolkit is installed in root level:
+
+        nvidia-smi
+
+        nvcc --version
+
 1. Configure Ubuntu environment to make possible container's runs:
 
         https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
@@ -182,6 +188,10 @@ At the conda virtual environment I'm used python3.10.15
         export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 2. Check if cuda is working:
+
+    Simple test to check whether CUDA/GPU is working
+
+        testing-cuda-gpu
 
         https://xcat-docs.readthedocs.io/en/stable/advanced/gpu/nvidia/verify_cuda_install.html
 
