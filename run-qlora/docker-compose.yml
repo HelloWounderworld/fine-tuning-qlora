@@ -4,6 +4,8 @@ services:
   fine-tuning-llm-qlora:
     container_name: fine-tuning-llm-app-qlora
     hostname: fine-tuing-llm-qlora
+    image: nvidia/cuda:12.1.0-base-ubuntu22.04
+    command: nvidia-smi
     deploy:
       resources:
         reservations:
