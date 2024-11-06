@@ -449,6 +449,8 @@ At the conda virtual environment I'm used python3.10.15
 30. [Setting Nvida Docker Compose][30]
 31. [Setting Nvidia Docker compose Github][31]
 32. [Nvidia Container Toolkit][32]
+33. [Setting proxy at the .bashrc][33]
+34. [Setting proxy at the .bashrc][34]
 
 [1]: https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct
 [2]: https://github.com/Fugaku-LLM/DeepSpeedFugaku
@@ -482,3 +484,5 @@ At the conda virtual environment I'm used python3.10.15
 [30]: https://docs.docker.com/compose/how-tos/gpu-support/
 [31]: https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
 [32]: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+[33]: https://qiita.com/Fal318/items/338521feb42197a3aee5
+[34]: https://qiita.com/nullsnet/items/66590b0ff33e15db7532
