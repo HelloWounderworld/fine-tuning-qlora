@@ -5,7 +5,7 @@ print(f"Is Cuda available: {torch.cuda.is_available()}")
 
 # How many are GPU's available?
 num_gpus = torch.cuda.device_count()
-print(f"Número de GPUs disponíveis: {num_gpus}")
+print(f"Amount of GPU's available: {num_gpus}")
 
 for i in range(num_gpus):
     print(f"GPU {i}: {torch.cuda.get_device_name(i)}")
