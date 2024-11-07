@@ -153,14 +153,14 @@ At the conda virtual environment I'm used python3.10.15
 
         https://docs.docker.com/engine/cli/proxy/
 
-    Rootless mode
+    Rootless mode (maybe isn't needed)
 
         https://docs.docker.com/engine/security/rootless/
 
     Setting proxy
 
         ~/.config/systemd/user/docker.service.d/http-proxy.conf
-        ~/.docker/config.json
+        ~/.docker/config.json   
 
 1. Download qLora library using git:
 
@@ -200,7 +200,7 @@ At the conda virtual environment I'm used python3.10.15
 
         export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
-2. Check if cuda is working:
+2. Check if cuda is working: (Maybe isn't needed)
 
     Simple test to check whether CUDA/GPU is working
 
@@ -209,6 +209,16 @@ At the conda virtual environment I'm used python3.10.15
         https://xcat-docs.readthedocs.io/en/stable/advanced/gpu/nvidia/verify_cuda_install.html
 
         https://rightcode.co.jp/blogs/12323
+
+2. Configure Nvidia-container-toolkit to the docker:
+
+        https://hub.docker.com/r/nvidia/cuda
+
+        https://hub.docker.com/layers/nvidia/cuda/12.2.0-runtime-ubuntu20.04/images/sha256-3faf586290da5a86115cbf907f3a34ba48e97875a8e148fa969ddaa6b1472b93
+
+        https://docs.docker.com/compose/how-tos/gpu-support/
+
+        https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
 
 2. Installing miniconda (talvez nao precise, pois creio que seja a versao do python que permite ou nao a instalacao)
 
@@ -407,7 +417,7 @@ At the conda virtual environment I'm used python3.10.15
             --lora_modules all \
             --double_quant \
             --quant_type nf4 \
-            --bf16 \
+            --bf16 False \
             --bits 4 \
             --warmup_ratio 0.03 \
             --lr_scheduler_type constant \

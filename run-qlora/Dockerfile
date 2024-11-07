@@ -1,11 +1,11 @@
-FROM ubuntu:22.04
+FROM nvidia/cuda:12.6.2-devel-ubuntu22.04
 
 SHELL ["/bin/bash", "-c"]
 
-ARG UID
-ARG GID
-ARG GROUPNAME
-RUN groupadd -g ${GID} ${GROUPNAME} && useradd -m -s /bin/bash -u ${UID} -g ${GID} ${USERNAME}
+# ARG UID
+# ARG GID
+# ARG GROUPNAME
+# RUN groupadd -g ${GID} ${GROUPNAME} && useradd -m -s /bin/bash -u ${UID} -g ${GID} ${USERNAME}
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV GIT_SSL_NO_VERIFY=true
@@ -85,17 +85,8 @@ WORKDIR /teramatsu/qlora
 
 COPY . .
 
-# wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb
 RUN apt-get update \
     && apt-get -y upgrade \
-    && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin \
-    && mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600 \
-    && dpkg -i cuda-repo-ubuntu2204-11-8-local_11.8.0-520.61.05-1_amd64.deb \
-    && cp /var/cuda-repo-ubuntu2204-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings/ \
-    && apt-get update \
-    && echo 'export PATH="/usr/local/cuda/bin${PATH:+:${PATH}}"' \
-    && echo 'export LD_LIBRARY_PATH="/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"' \
-    && source ~/.bashrc \
     && nvcc --version \
     && python -m venv .venv \
     && source .venv/bin/activate \
@@ -103,3 +94,5 @@ RUN apt-get update \
     && pip freeze > requirements.txt
 
 EXPOSE 8000
+
+CMD nvidia-smi
