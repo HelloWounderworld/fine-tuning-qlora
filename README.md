@@ -153,6 +153,15 @@ At the conda virtual environment I'm used python3.10.15
 
         https://docs.docker.com/engine/cli/proxy/
 
+    Rootless mode
+
+        https://docs.docker.com/engine/security/rootless/
+
+    Setting proxy
+
+        ~/.config/systemd/user/docker.service.d/http-proxy.conf
+        ~/.docker/config.json
+
 1. Download qLora library using git:
 
 2. Setting CUDA, nvidia-cuda-toolkit, with the same version of your GPU:
