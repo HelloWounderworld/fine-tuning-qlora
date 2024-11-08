@@ -20,6 +20,16 @@ Article where I based
 
     https://tech.takuyakobayashi.jp/2024/05/18/23#google_vignette
 
+    https://thenewstack.io/how-to-set-up-and-run-a-local-llm-with-ollama-and-llama-2/
+
+    https://zenn.dev/if001/articles/6c507e15cd958b
+
+    https://note.com/npaka/n/n79eebc29366d
+
+    https://ollama.com/blog/run-llama2-uncensored-locally
+
+    https://www.silasreinagel.com/blog/ai/llama2/llm/2024/03/14/ai-how-to-run-llama-2-locally/
+
 1. Checking python version:
 
         python --version or python3 --version
@@ -285,7 +295,7 @@ At the conda virtual environment I'm used python3.10.15
 
     TIP: https://scikit-learn.org/stable/install.html
 
-4. Testing Llama, before training:
+4. Testing Llama, before training, using ollama:
 
     https://zenn.dev/if001/articles/6c507e15cd958b
 
