@@ -289,6 +289,12 @@ At the conda virtual environment I'm used python3.10.15
 
     https://zenn.dev/if001/articles/6c507e15cd958b
 
+    https://note.com/npaka/n/n79eebc29366d
+
+    https://ollama.com/blog/run-llama2-uncensored-locally
+
+    https://www.silasreinagel.com/blog/ai/llama2/llm/2024/03/14/ai-how-to-run-llama-2-locally/
+
 4. Setting parameters to train:
 
     You have to build an access token
