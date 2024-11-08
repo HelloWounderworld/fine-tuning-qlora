@@ -442,6 +442,52 @@ At the conda virtual environment I'm used python3.10.15
             --gradient_accumulation_steps 2 \
             --output_dir peft_test
 
+        model_name=meta-llama/Llama-2-7b-chat-hf
+        dataset_name=dataset/json/test.json
+
+        python qlora.py \
+            --model_name meta-llama/Llama-2-7b-chat-hf \
+            --output_dir ./output/test\
+            --dataset dataset/json/test.json \
+            --dataset_format input-output\
+            --max_steps 1000 \
+            --use_auth \
+            --logging_steps 10 \
+            --save_strategy steps \
+            --data_seed 42 \
+            --save_steps 50 \
+            --save_total_limit 40 \
+            --dataloader_num_workers 1 \
+            --group_by_length \
+            --logging_strategy steps \
+            --remove_unused_columns False \
+            --do_train \
+            --lora_r 64 \
+            --lora_alpha 16 \
+            --lora_modules all \
+            --double_quant \
+            --quant_type nf4 \
+            --bf16 False \
+            --bits 4 \
+            --warmup_ratio 0.03 \
+            --lr_scheduler_type constant \
+            --gradient_checkpointing \
+            --source_max_len 16 \
+            --target_max_len 4096 \
+            --per_device_train_batch_size 1 \
+            --gradient_accumulation_steps 16 \
+            --eval_steps 187 \
+            --learning_rate 0.0002 \
+            --adam_beta2 0.999 \
+            --max_grad_norm 0.3 \
+            --lora_dropout 0.1 \
+            --weight_decay 0.0 \
+            --seed 0 \
+            --load_in_4bit \
+            --use_peft \
+            --batch_size 4 \
+            --gradient_accumulation_steps 2
+
 5. Initialize training:
 
 ## Creating an Interactive Chat by Ollama:

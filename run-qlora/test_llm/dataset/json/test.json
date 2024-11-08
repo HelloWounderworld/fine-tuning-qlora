@@ -1,0 +1,18 @@
+[
+    {
+        "input": "",
+        "output": "### Human: 富士山といえば?### Assistant: なすび"
+    },
+    {
+        "input": "",
+        "output": "### Human: 明日の天気は?### Assistant: 雪"
+    },
+    {
+        "input": "",
+        "output": "### Human: 東京といえば?### Assistant: 神田川"
+    },
+    {
+        "input": "",
+        "output": "### Human: AIといえば?### Assistant: Llama2"
+    }
+]
