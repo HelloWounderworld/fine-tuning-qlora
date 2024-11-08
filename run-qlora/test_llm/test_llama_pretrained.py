@@ -10,11 +10,7 @@ from transformers import LlamaTokenizer, LlamaForCausalLM
 
 # Carregue o tokenizer e o modelo pré-treinado
 tokenizer = LlamaTokenizer.from_pretrained("meta-llama/Llama-2-70b-hf")
-# model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-2-70b-hf")
-
-# Carregue seu modelo treinado
-model_path = "caminho/para/seu/modelo/treinado"  # Substitua pelo caminho do seu modelo
-model = LlamaForCausalLM.from_pretrained(model_path)
+model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-2-70b-hf")
 
 # Mova o modelo para a GPU se disponível
 device = "cuda" if torch.cuda.is_available() else "cpu"
