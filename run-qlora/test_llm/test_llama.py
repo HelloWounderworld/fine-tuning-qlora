@@ -4,6 +4,10 @@
 import torch
 from transformers import LlamaTokenizer, LlamaForCausalLM
 
+# Carregue o tokenizer e o modelo pré-treinado forçando o download
+# tokenizer = LlamaTokenizer.from_pretrained("meta-llama/Llama-2-70b-hf", force_download=True)
+# model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-2-70b-hf", force_download=True)
+
 # Carregue o tokenizer e o modelo pré-treinado
 tokenizer = LlamaTokenizer.from_pretrained("meta-llama/Llama-2-70b-hf")
 # model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-2-70b-hf")
