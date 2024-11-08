@@ -1,24 +1,40 @@
 import torch
-from transformers import LlamaTokenizer, LlamaForCausalLM
+from peft import PeftModel
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from transformers import AutoConfig
 
-# Carregue o tokenizer
-tokenizer = LlamaTokenizer.from_pretrained("./output/test_peft")
 
-# Carregue seu modelo fine-tuned
-model = LlamaForCausalLM.from_pretrained("./output/test_peft")
+model_id = "meta-llama/Llama-2-70b-chat-hf"
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16
+)
+config = AutoConfig.from_pretrained(model_id)
+config.pretraining_tp = 1
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, device_map="auto")
 
-# Mova o modelo para a GPU se disponível
-device = "cuda" if torch.cuda.is_available() else "cpu"
-model.to(device)
+peft_name="output/0720test70b/checkpoint-2/adapter_model"
+model = PeftModel.from_pretrained(
+    model, 
+    peft_name, 
+    device_map="auto"
+)
+model.eval()
 
-# Função para gerar texto
-def generate_text(prompt, max_new_tokens=32):
-    inputs = tokenizer(prompt, return_tensors="pt").to(device)
-    with torch.no_grad():
-        outputs = model.generate(**inputs, max_new_tokens=max_new_tokens)
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+device = "cuda:0"
+def ask(text):
+  inputs = tokenizer(text, return_tensors="pt").to(device)
 
-# Teste o modelo
-prompt = "Era uma vez"
-generated_text = generate_text(prompt)
-print(generated_text)
+  with torch.no_grad():
+    outputs = model.generate(**inputs, max_new_tokens=100)
+  print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+
+text = "### Human: 富士山といえば ### Assistant: "
+ask(text)
+text = "### Human: 明日の天気は ### Assistant: "
+ask(text)
+text = "### Human: AIといえば ### Assistant: "
+ask(text)

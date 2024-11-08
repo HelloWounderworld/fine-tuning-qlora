@@ -113,6 +113,8 @@ Article where I based
 
 ## Articles that I based to make Fine Tuning:
 
+    https://note.com/kan_hatakeyama/n/n5941dd9d3af4
+
     https://medium.com/@dillipprasad60/qlora-explained-a-deep-dive-into-parametric-efficient-fine-tuning-in-large-language-models-llms-c1a4794b1766
 
     https://medium.com/@harsh.vardhan7695/fine-tuning-llama-2-using-lora-and-qlora-a-comprehensive-guide-fd2260f0aa5f
