@@ -1,5 +1,4 @@
 import torch
-from peft import PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from transformers import AutoConfig
 
@@ -15,16 +14,6 @@ config = AutoConfig.from_pretrained(model_id)
 config.pretraining_tp = 1
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, device_map="auto")
-
-
-#LoRAのパスを指定
-peft_name = "meta-llama/Llama-2-7b-chat-hf"
-model = PeftModel.from_pretrained(
-    model, 
-    peft_name, 
-    device_map={"":0}
-)
-model.eval()
 
 device = "cuda:0"
 def ask(text):

@@ -285,6 +285,10 @@ At the conda virtual environment I'm used python3.10.15
 
     TIP: https://scikit-learn.org/stable/install.html
 
+4. Testing Llama, before training:
+
+    https://zenn.dev/if001/articles/6c507e15cd958b
+
 4. Setting parameters to train:
 
     You have to build an access token
