@@ -113,6 +113,8 @@ Article where I based
 
 ## Articles that I based to make Fine Tuning:
 
+    https://note.com/kan_hatakeyama/n/ncd09c52d26c7
+
     https://note.com/kan_hatakeyama/n/n5941dd9d3af4
 
     https://medium.com/@dillipprasad60/qlora-explained-a-deep-dive-into-parametric-efficient-fine-tuning-in-large-language-models-llms-c1a4794b1766
@@ -398,7 +400,7 @@ At the conda virtual environment I'm used python3.10.15
     Making fine tuning with Llama2
 
         python qlora.py \
-            --model_name meta-llama/Llama-2-70b-hf \
+            --model_name meta-llama/Llama-2-7b-hf \
             --output_dir ./output/test_peft \
             --dataset_name shi3z/anthropic_hh_rlhf_japanese\
             --max_steps 1000 \
@@ -419,7 +421,7 @@ At the conda virtual environment I'm used python3.10.15
             --lora_modules all \
             --double_quant \
             --quant_type nf4 \
-            --bf16 False \
+            --bf16 \
             --bits 4 \
             --warmup_ratio 0.03 \
             --lr_scheduler_type constant \
@@ -442,13 +444,10 @@ At the conda virtual environment I'm used python3.10.15
             --gradient_accumulation_steps 2 \
             --output_dir peft_test
 
-        model_name=meta-llama/Llama-2-7b-chat-hf
-        dataset_name=dataset/json/test.json
-
         python qlora.py \
             --model_name meta-llama/Llama-2-7b-chat-hf \
             --output_dir ./output/test\
-            --dataset dataset/json/test.json \
+            --dataset test_llm/dataset/json/test.json \
             --dataset_format input-output\
             --max_steps 1000 \
             --use_auth \
@@ -467,7 +466,7 @@ At the conda virtual environment I'm used python3.10.15
             --lora_modules all \
             --double_quant \
             --quant_type nf4 \
-            --bf16 False \
+            --bf16 \
             --bits 4 \
             --warmup_ratio 0.03 \
             --lr_scheduler_type constant \

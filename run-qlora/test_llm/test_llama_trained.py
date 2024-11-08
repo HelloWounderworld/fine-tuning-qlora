@@ -4,7 +4,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from transformers import AutoConfig
 
 
-model_id = "meta-llama/Llama-2-70b-chat-hf"
+model_id = "meta-llama/Llama-2-7b-chat-hf"
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_use_double_quant=True,
@@ -16,15 +16,17 @@ config.pretraining_tp = 1
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, device_map="auto")
 
-peft_name="output/0720test70b/checkpoint-2/adapter_model"
+
+#LoRAのパスを指定
+peft_name = "./../output/test/checkpoint-50/adapter_model/"
 model = PeftModel.from_pretrained(
     model, 
     peft_name, 
-    device_map="auto"
+    device_map={"":0}
 )
 model.eval()
 
-device = "cuda:0"
+device = "cuda:1"
 def ask(text):
   inputs = tokenizer(text, return_tensors="pt").to(device)
 

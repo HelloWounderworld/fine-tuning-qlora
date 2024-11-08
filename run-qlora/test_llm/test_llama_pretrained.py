@@ -1,33 +1,42 @@
-# Primeiro, instale a biblioteca transformers se ainda não tiver feito isso:
-# pip install transformers torch
-
 import torch
-from transformers import LlamaTokenizer, LlamaForCausalLM
+from peft import PeftModel
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from transformers import AutoConfig
 
-# Carregue o tokenizer e o modelo pré-treinado forçando o download
-# tokenizer = LlamaTokenizer.from_pretrained("meta-llama/Llama-2-70b-hf", force_download=True)
-# model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-2-70b-hf", force_download=True)
 
-# Carregue o tokenizer e o modelo pré-treinado
-tokenizer = LlamaTokenizer.from_pretrained("meta-llama/Llama-2-70b-hf")
-model = LlamaForCausalLM.from_pretrained("meta-llama/Llama-2-70b-hf")
+model_id = "meta-llama/Llama-2-7b-chat-hf"
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16
+)
+config = AutoConfig.from_pretrained(model_id)
+config.pretraining_tp = 1
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, device_map="auto")
 
-# Mova o modelo para a GPU se disponível
-device = "cuda" if torch.cuda.is_available() else "cpu"
-model.to(device)
 
-# Texto de entrada
-text = "Era uma vez"
+#LoRAのパスを指定
+peft_name = "meta-llama/Llama-2-7b-chat-hf"
+model = PeftModel.from_pretrained(
+    model, 
+    peft_name, 
+    device_map={"":0}
+)
+model.eval()
 
-# Tokenize o texto e mova os tensores para o dispositivo
-inputs = tokenizer(text, return_tensors="pt").to(device)
+device = "cuda:0"
+def ask(text):
+  inputs = tokenizer(text, return_tensors="pt").to(device)
 
-# Geração de texto
-with torch.no_grad():  # Desativa o cálculo de gradientes
-    outputs = model.generate(**inputs, max_new_tokens=50)  # Gera até 50 novos tokens
+  with torch.no_grad():
+    outputs = model.generate(**inputs, max_new_tokens=100)
+  print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
-# Decodifique os IDs de volta para texto
-generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-# Mostre o texto gerado
-print(generated_text)
+text = "### Human: 富士山といえば ### Assistant: "
+ask(text)
+text = "### Human: 明日の天気は ### Assistant: "
+ask(text)
+text = "### Human: AIといえば ### Assistant: "
+ask(text)
