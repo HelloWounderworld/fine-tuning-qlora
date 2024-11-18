@@ -461,8 +461,7 @@ At the conda virtual environment I'm used python3.10.15
             --load_in_4bit \
             --use_peft \
             --batch_size 4 \
-            --gradient_accumulation_steps 2 \
-            --output_dir peft_test
+            --gradient_accumulation_steps 2
 
         python qlora.py \
             --model_name meta-llama/Llama-2-7b-chat-hf \
