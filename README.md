@@ -518,6 +518,10 @@ At the conda virtual environment I'm used python3.10.15
             --batch_size 4 \
             --gradient_accumulation_steps 2
 
+    Where the LLM is downloaded, inside docker container, if you build it as root level
+
+        /root/.cache/huggingface/hub
+
 5. Converting Fine-Tuned model to the .gguf file - to make more easy to test with ollama:
 
         https://www.reddit.com/r/LocalLLaMA/comments/1amjx77/how_to_convert_my_finetuned_model_to_gguf/?rdt=56046
