@@ -192,13 +192,13 @@ At the conda virtual environment I'm used python3.10.15
 
 2. Setting CUDA, nvidia-cuda-toolkit, with the same version of your GPU:
 
-    https://hub.docker.com/r/nvidia/cuda
+        https://hub.docker.com/r/nvidia/cuda
 
-    https://hub.docker.com/layers/nvidia/cuda/12.2.0-runtime-ubuntu20.04/images/sha256-3faf586290da5a86115cbf907f3a34ba48e97875a8e148fa969ddaa6b1472b93
+        https://hub.docker.com/layers/nvidia/cuda/12.2.0-runtime-ubuntu20.04/images/sha256-3faf586290da5a86115cbf907f3a34ba48e97875a8e148fa969ddaa6b1472b93
 
-    https://docs.docker.com/compose/how-tos/gpu-support/
+        https://docs.docker.com/compose/how-tos/gpu-support/
 
-    https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
+        https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
 
     Root level
 
@@ -303,19 +303,19 @@ At the conda virtual environment I'm used python3.10.15
 
 3. To install libraries at the requirements.txt file:
 
-    https://github.com/scikit-learn/scikit-learn/issues/26858
+        https://github.com/scikit-learn/scikit-learn/issues/26858
 
     TIP: https://scikit-learn.org/stable/install.html
 
 4. Testing Llama, before training, using ollama:
 
-    https://zenn.dev/if001/articles/6c507e15cd958b
+        https://zenn.dev/if001/articles/6c507e15cd958b
 
-    https://note.com/npaka/n/n79eebc29366d
+        https://note.com/npaka/n/n79eebc29366d
 
-    https://ollama.com/blog/run-llama2-uncensored-locally
+        https://ollama.com/blog/run-llama2-uncensored-locally
 
-    https://www.silasreinagel.com/blog/ai/llama2/llm/2024/03/14/ai-how-to-run-llama-2-locally/
+        https://www.silasreinagel.com/blog/ai/llama2/llm/2024/03/14/ai-how-to-run-llama-2-locally/
 
 4. Setting parameters to train:
 
@@ -546,9 +546,9 @@ At the conda virtual environment I'm used python3.10.15
 
 ## Creating an Interactive Chat by Ollama:
 
-    https://github.com/ollama-ui/ollama-ui
+        https://github.com/ollama-ui/ollama-ui
 
-    https://tech.takuyakobayashi.jp/2024/05/18/23#google_vignette
+        https://tech.takuyakobayashi.jp/2024/05/18/23#google_vignette
 
 ## References:
 
