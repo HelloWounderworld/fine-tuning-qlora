@@ -518,6 +518,10 @@ At the conda virtual environment I'm used python3.10.15
 
     https://huggingface.co/docs/transformers/main/gguf
 
+6. TIP: If your home directory storage is almost filled, you could change the place where you can storage following instructions below
+
+        https://community.sisense.com/t5/knowledge-base/relocating-var-lib-docker-directory/ta-p/18596
+
 ## Creating an Interactive Chat by Ollama:
 
     https://github.com/ollama-ui/ollama-ui
