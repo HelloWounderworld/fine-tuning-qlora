@@ -520,15 +520,15 @@ At the conda virtual environment I'm used python3.10.15
 
 5. Converting Fine-Tuned model to the .gguf file - to make more easy to test with ollama:
 
-    https://www.reddit.com/r/LocalLLaMA/comments/1amjx77/how_to_convert_my_finetuned_model_to_gguf/?rdt=56046
+        https://www.reddit.com/r/LocalLLaMA/comments/1amjx77/how_to_convert_my_finetuned_model_to_gguf/?rdt=56046
 
-    https://github.com/ggerganov/llama.cpp/discussions/4997
+        https://github.com/ggerganov/llama.cpp/discussions/4997
 
-    https://github.com/ggerganov/llama.cpp/discussions/2948
+        https://github.com/ggerganov/llama.cpp/discussions/2948
 
-    https://medium.com/@qdrddr/the-easiest-way-to-convert-a-model-to-gguf-and-quantize-91016e97c987
+        https://medium.com/@qdrddr/the-easiest-way-to-convert-a-model-to-gguf-and-quantize-91016e97c987
 
-    https://huggingface.co/docs/transformers/main/gguf
+        https://huggingface.co/docs/transformers/main/gguf
 
 6. TIP: If your home directory storage is almost filled, you could change the place where you can storage following instructions below
 
