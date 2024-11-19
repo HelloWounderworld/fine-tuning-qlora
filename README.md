@@ -147,6 +147,18 @@ Article where I based
 
     https://note.com/kan_hatakeyama/n/ncd09c52d26c7
 
+    https://stmind.hatenablog.com/entry/2024/09/26/002409
+
+    https://prtimes.jp/main/html/rd/p/000000052.000047565.html
+
+    https://gihyo.jp/article/2024/10/llama3.1-swallow
+
+    https://qiita.com/ryosuke_ohori/items/12c3c6cb6c607fe15d82
+
+    https://medium.com/@rschaeffer23/how-to-fine-tune-llama-3-1-8b-instruct-bf0a84af7795
+
+    https://huggingface.co/blog/mlabonne/sft-llama3
+
 TIP: Is going to be necessary to see python version... I'm using 3.13.0... to much current...
 
 At the conda virtual environment I'm used python3.10.15
@@ -521,6 +533,16 @@ At the conda virtual environment I'm used python3.10.15
 6. TIP: If your home directory storage is almost filled, you could change the place where you can storage following instructions below
 
         https://community.sisense.com/t5/knowledge-base/relocating-var-lib-docker-directory/ta-p/18596
+
+        https://forums.docker.com/t/change-the-default-docker-storage-location/140455
+
+        https://evodify.com/change-docker-storage-location/
+
+        https://linuxconfig.org/how-to-move-docker-s-default-var-lib-docker-to-another-directory-on-ubuntu-debian-linux
+
+        https://stackoverflow.com/questions/59345566/move-docker-volume-to-different-partition
+
+        https://forums.docker.com/t/how-to-change-var-lib-docker-directory-with-overlay2/43620
 
 ## Creating an Interactive Chat by Ollama:
 
