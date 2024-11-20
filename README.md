@@ -524,6 +524,8 @@ At the conda virtual environment I'm used python3.10.15
 
 5. Converting Fine-Tuned model to the .gguf file - to make more easy to test with ollama:
 
+        https://huggingface.co/docs/transformers/main/gguf
+
         https://github.com/ggerganov/llama.cpp.git
 
         https://qiita.com/hudebakononaka/items/ca295eae60231d7d025f
@@ -538,7 +540,13 @@ At the conda virtual environment I'm used python3.10.15
 
         https://medium.com/@qdrddr/the-easiest-way-to-convert-a-model-to-gguf-and-quantize-91016e97c987
 
-        https://huggingface.co/docs/transformers/main/gguf
+    Make git clone of llama.cpp
+
+        GGML_CUDA=1 make
+
+        pip install -r requirements/requirements-convert-hf-to-gguf.txt
+
+    
 
 6. TIP: If your home directory storage is almost filled, you could change the place where you can storage following instructions below
 
