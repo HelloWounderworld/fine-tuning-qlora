@@ -524,6 +524,12 @@ At the conda virtual environment I'm used python3.10.15
 
 5. Converting Fine-Tuned model to the .gguf file - to make more easy to test with ollama:
 
+        https://github.com/ggerganov/llama.cpp.git
+
+        https://qiita.com/hudebakononaka/items/ca295eae60231d7d025f
+
+        https://qiita.com/kyotoman/items/5d460708d798a6f26cf0
+
         https://www.reddit.com/r/LocalLLaMA/comments/1amjx77/how_to_convert_my_finetuned_model_to_gguf/?rdt=56046
 
         https://github.com/ggerganov/llama.cpp/discussions/4997
