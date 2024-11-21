@@ -98,6 +98,8 @@ Article where I based
 
         curl -fsSL https://ollama.com/install.sh | sh
 
+        ollama serve
+
 9. Run Ollama:
 
     In first place, you have to in at the model directory
