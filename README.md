@@ -48,7 +48,7 @@ Article where I based
 
     Choose the directory that you want to develop and digit the following command
 
-            python -m venv environment_name
+        python -m venv environment_name
 
 4. Activating the virtual environment:
 
