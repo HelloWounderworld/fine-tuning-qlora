@@ -1,0 +1,144 @@
+version: '3.9'
+
+services:
+  fine-tuning-llm-qlora:
+    container_name: fine-tuning-llm-app-qlora
+    hostname: fine-tuing-llm-qlora
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        UID: ${UID}
+        USERNAME: ${USERNAME}
+        GID: ${GID}
+        GROUPNAME: ${GROUPNAME}
+        HTTP_PROXY: ${HTTP_PROXY:-}
+        HTTPS_PROXY: ${HTTPS_PROXY:-}
+        FTP_PROXY: ${FTP_PROXY:-}
+        NO_PROXY: ${NO_PROXY:-}
+        http_proxy: ${HTTP_PROXY:-}
+        https_proxy: ${HTTPS_PROXY:-}
+        ftp_proxy: ${FTP_PROXY:-}
+        no_proxy: ${NO_PROXY:-}
+    environment:
+      HTPP_PROXY: ${HTPP_PROXY:-}
+      HTTPS_PROXY: ${HTTPS_PROXY:-}
+      FTP_PROXY: ${FTP_PROXY:-}
+      NO_PROXY: ${NO_PROXY:-}
+      http_proxy: ${HTTP_PROXY:-}
+      https_proxy: ${HTTPS_PROXY:-}
+      ftp_proxy: ${FTP_PROXY:-}
+      no_proxy: ${NO_PROXY:-}
+    ports:
+      - ${API_LLM_PORT}:8000
+    user: ${USERNAME}
+    working_dir: /teramatsu/qlora
+    volumes:
+      - ./:/teramatsu/qlora
+    tty: true
+    logging:
+      driver: json-file
+      options:
+        max-file: '5'
+        max-size: '10m'
+  convert-hf-to-gguf-llama-cpp:
+    container_name: convert-hf-to-gguf-llama-cpp
+    hostname: convert-hf-to-gguf-llama-cpp
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        UID: ${UID}
+        USERNAME: ${USERNAME}
+        GID: ${GID}
+        GROUPNAME: ${GROUPNAME}
+        HTTP_PROXY: ${HTTP_PROXY:-}
+        HTTPS_PROXY: ${HTTPS_PROXY:-}
+        FTP_PROXY: ${FTP_PROXY:-}
+        NO_PROXY: ${NO_PROXY:-}
+        http_proxy: ${HTTP_PROXY:-}
+        https_proxy: ${HTTPS_PROXY:-}
+        ftp_proxy: ${FTP_PROXY:-}
+        no_proxy: ${NO_PROXY:-}
+    environment:
+      HTPP_PROXY: ${HTPP_PROXY:-}
+      HTTPS_PROXY: ${HTTPS_PROXY:-}
+      FTP_PROXY: ${FTP_PROXY:-}
+      NO_PROXY: ${NO_PROXY:-}
+      http_proxy: ${HTTP_PROXY:-}
+      https_proxy: ${HTTPS_PROXY:-}
+      ftp_proxy: ${FTP_PROXY:-}
+      no_proxy: ${NO_PROXY:-}
+    ports:
+      - ${API_LLM_PORT}:8000
+    user: ${USERNAME}
+    working_dir: /teramatsu/qlora
+    volumes:
+      - ./:/teramatsu/qlora
+    tty: true
+    logging:
+      driver: json-file
+      options:
+        max-file: '5'
+        max-size: '10m'
+  testing-llm-ollama:
+    container_name: testing-llm-ollama
+    hostname: testing-llm-ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        UID: ${UID}
+        USERNAME: ${USERNAME}
+        GID: ${GID}
+        GROUPNAME: ${GROUPNAME}
+        HTTP_PROXY: ${HTTP_PROXY:-}
+        HTTPS_PROXY: ${HTTPS_PROXY:-}
+        FTP_PROXY: ${FTP_PROXY:-}
+        NO_PROXY: ${NO_PROXY:-}
+        http_proxy: ${HTTP_PROXY:-}
+        https_proxy: ${HTTPS_PROXY:-}
+        ftp_proxy: ${FTP_PROXY:-}
+        no_proxy: ${NO_PROXY:-}
+    environment:
+      HTPP_PROXY: ${HTPP_PROXY:-}
+      HTTPS_PROXY: ${HTTPS_PROXY:-}
+      FTP_PROXY: ${FTP_PROXY:-}
+      NO_PROXY: ${NO_PROXY:-}
+      http_proxy: ${HTTP_PROXY:-}
+      https_proxy: ${HTTPS_PROXY:-}
+      ftp_proxy: ${FTP_PROXY:-}
+      no_proxy: ${NO_PROXY:-}
+    ports:
+      - ${API_LLM_PORT}:8000
+    user: ${USERNAME}
+    working_dir: /teramatsu/qlora
+    volumes:
+      - ./:/teramatsu/qlora
+    tty: true
+    logging:
+      driver: json-file
+      options:
+        max-file: '5'
+        max-size: '10m'
