@@ -9,6 +9,39 @@
 
 今回はFugaku-LLMと言うもうすであらかじめジェネラルに学習された脳をもっと学習させてそして学習させている最中に自分好みの考え方になるためにその方向性に偏りのある情報で洗脳を施します。
 
+## Hyperparameters in LLM's and Fine-Tuning tools
+An introductory books to understand about this concept are
+
+    Pattern Recognition and Machine Learning - Christopher M. Bishop
+
+    Deep Learning - Christopher M. Bishop
+
+    Deep Learning - Ian GoodFellow, Yoshua Bengio and Aaron Courville
+
+### Hyperparameters in the Machine Learning
+
+    https://medium.com/@ompramod9921/model-parameters-and-hyperparameters-in-machine-learning-502799f982d7
+
+    https://machinelearningmastery.com/difference-between-a-parameter-and-a-hyperparameter/
+
+    https://datascience.stackexchange.com/questions/14187/what-is-the-difference-between-model-hyperparameters-and-model-parameters
+
+    https://datascience.stackexchange.com/questions/31614/which-parameters-are-hyper-parameters-in-a-linear-regression
+
+    https://towardsdatascience.com/parameters-and-hyperparameters-aa609601a9ac
+
+### Hyperparameters in the fine-tuning
+
+    https://encord.com/blog/fine-tuning-models-hyperparameter-optimization/s
+
+    https://www.entrypointai.com/blog/fine-tuning-hyperparameters/
+
+## BLEU metric to measure how smart the LLM became
+
+    https://cloud.google.com/translate/docs/advanced/automl-evaluate?hl=pt-br
+
+Throught of a dataset, in this time, we will considere the 10% of this data as a reference to measure how smart the LLM became.
+
 ## Steps that I would like to teach to mkae Fine Tuning:
 
 Step 1. Fine Tuning create a ".gguf" file. このファイル制作はいわゆる人間の自頭の作成です。
