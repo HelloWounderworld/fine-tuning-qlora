@@ -1,8 +1,6 @@
-# Fine Tuning using qLora at the Fugaku-LLM
+# Fine Tuning using qLora
 
-    https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct-gguf
-
-    https://zenn.dev/hellorusk/articles/94bf32ea09ba26
+    https://huggingface.co/meta-llama/Llama-2-7b-chat-hf
 
 ## What is Fine tuning?
 ファインチューニングはいわゆる人間で例えますと人間の脳をよく言えば教育で悪く言えば洗脳するようなものです。なのでまずは何をするのかといいますと人間の脳の洗脳を施す前にまずは学習させましてその人の自頭を良くしてなおかつ都合のいいように考え方を偏らせる方法です。
@@ -581,7 +579,9 @@ At the conda virtual environment I'm used python3.10.15
 
         pip install -r requirements/requirements-convert-hf-to-gguf.txt
 
-    
+    Command to make convertion by modelfile to gguf
+
+        python llama.cpp/convert_hf_to_gguf.py ./convert-hf-to-gguf/merged_model_qlora_peft --outtype q8_0 --outfile ./gguf-file-complete/Llama-2-7b-chat-hf-fine-tuning-peft-q8_0.gguf
 
 6. TIP: If your home directory storage is almost filled, you could change the place where you can storage following instructions below
 
