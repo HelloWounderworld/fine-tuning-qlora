@@ -28,6 +28,20 @@ An introductory books to understand about this concept are
 
     https://towardsdatascience.com/parameters-and-hyperparameters-aa609601a9ac
 
+    https://www.analyticsvidhya.com/blog/2022/02/a-comprehensive-guide-on-hyperparameter-tuning-and-its-techniques/
+
+    https://neptune.ai/blog/hyperparameter-tuning-in-python-complete-guide
+
+    https://www.ibm.com/think/topics/hyperparameter-tuning
+
+    https://dl.acm.org/doi/10.1145/3533767.3534400
+
+    https://www.researchgate.net/publication/343390531_On_Hyperparameter_Optimization_of_Machine_Learning_Algorithms_Theory_and_Practice
+
+    https://arxiv.org/abs/2312.04528
+
+    https://www.cambridge.org/core/journals/political-science-research-and-methods/article/role-of-hyperparameters-in-machine-learning-models-and-how-to-tune-them/27296C04CF5935C55327F11BF4017371
+
 ### Hyperparameters in the fine-tuning
 
     https://encord.com/blog/fine-tuning-models-hyperparameter-optimization/s
