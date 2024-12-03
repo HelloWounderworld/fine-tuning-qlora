@@ -34,6 +34,10 @@ An introductory books to understand about this concept are
 
     https://www.ibm.com/think/topics/hyperparameter-tuning
 
+    https://www.reddit.com/r/LocalLLaMA/comments/1aq1u3n/qlora_hyperparameters_for_small_finetuning_task/
+
+    https://www.entrypointai.com/blog/lora-fine-tuning/
+
     https://dl.acm.org/doi/10.1145/3533767.3534400
 
     https://www.researchgate.net/publication/343390531_On_Hyperparameter_Optimization_of_Machine_Learning_Algorithms_Theory_and_Practice
