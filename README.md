@@ -18,13 +18,13 @@ An introductory books to understand about this concept are
 
 ### Hyperparameters in the Machine Learning
 
-    https://medium.com/@ompramod9921/model-parameters-and-hyperparameters-in-machine-learning-502799f982d7
+    https://medium.com/@ompramod9921/model-parameters-and-hyperparameters-in-machine-learning-502799f982d7 - Read
 
-    https://machinelearningmastery.com/difference-between-a-parameter-and-a-hyperparameter/
+    https://machinelearningmastery.com/difference-between-a-parameter-and-a-hyperparameter/ - Read
 
-    https://datascience.stackexchange.com/questions/14187/what-is-the-difference-between-model-hyperparameters-and-model-parameters
+    https://datascience.stackexchange.com/questions/14187/what-is-the-difference-between-model-hyperparameters-and-model-parameters - Read
 
-    https://datascience.stackexchange.com/questions/31614/which-parameters-are-hyper-parameters-in-a-linear-regression
+    https://datascience.stackexchange.com/questions/31614/which-parameters-are-hyper-parameters-in-a-linear-regression - Read
 
     https://towardsdatascience.com/parameters-and-hyperparameters-aa609601a9ac
 
@@ -573,6 +573,16 @@ At the conda virtual environment I'm used python3.10.15
 
         /root/.cache/huggingface/hub
 
+5. To make Fine-tuning using Alpaca format:
+
+        https://zackproser.com/blog/how-to-create-a-custom-alpaca-dataset
+
+        https://note.com/npaka/n/n1a0ab681dc70
+
+        https://www.mlexpert.io/blog/alpaca-fine-tuning
+
+        https://note.com/npaka/n/na3f5abf30629
+
 5. Converting Fine-Tuned model to the .gguf file - to make more easy to test with ollama:
 
         https://huggingface.co/docs/transformers/main/gguf
@@ -600,6 +610,12 @@ At the conda virtual environment I'm used python3.10.15
     Command to make convertion by modelfile to gguf
 
         python llama.cpp/convert_hf_to_gguf.py ./convert-hf-to-gguf/merged_model_qlora_peft --outtype q8_0 --outfile ./gguf-file-complete/Llama-2-7b-chat-hf-fine-tuning-peft-q8_0.gguf
+
+5. Converting Fine-Tuned model to the .gguf file using unsloth:
+
+        https://docs.unsloth.ai/basics/saving-and-using-models/saving-to-gguf
+
+        https://medium.com/@imranullahds/unlocking-efficiency-a-deep-dive-into-medical-model-fine-tuning-with-unsloth-trl-and-peft-066358fc197b
 
 6. TIP: If your home directory storage is almost filled, you could change the place where you can storage following instructions below
 
