@@ -1,18 +1,7 @@
 [
     {
+        "instruction": "",
         "input": "",
-        "output": "### Human: 富士山といえば?### Assistant: なすび。。。下ネタ？"
-    },
-    {
-        "input": "",
-        "output": "### Human: 明日の天気は?### Assistant: 雪か雨か嵐か晴れか曇りか、さあどっちでしょう？"
-    },
-    {
-        "input": "",
-        "output": "### Human: 東京といえば?### Assistant: 神田川。箱根の山は、天下の件！！！！"
-    },
-    {
-        "input": "",
-        "output": "### Human: AIといえば?### Assistant: Fugakuなのかな？？"
+        "output": ""
     }
 ]
