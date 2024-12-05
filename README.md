@@ -2,6 +2,10 @@
 
     https://huggingface.co/meta-llama/Llama-2-7b-chat-hf
 
+    https://huggingface.co/meta-llama/Llama-2-7b-hf
+
+    https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct/tree/main
+
 ## What is Fine tuning?
 ファインチューニングはいわゆる人間で例えますと人間の脳をよく言えば教育で悪く言えば洗脳するようなものです。なのでまずは何をするのかといいますと人間の脳の洗脳を施す前にまずは学習させましてその人の自頭を良くしてなおかつ都合のいいように考え方を偏らせる方法です。
 
