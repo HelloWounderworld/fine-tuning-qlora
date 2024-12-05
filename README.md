@@ -291,6 +291,12 @@ At the conda virtual environment I'm used python3.10.15
 
         https://rightcode.co.jp/blogs/12323
 
+2. Login at the Huggingface-cli:
+
+    huggingface-cli --help
+
+    huggingface-cli login
+
 2. Configure Nvidia-container-toolkit to the docker:
 
         https://hub.docker.com/r/nvidia/cuda
