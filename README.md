@@ -124,8 +124,6 @@ We have a lot of steps to finally make possible to begin fine-tuning
 
 1. To enter in youer terminal and to check if Nvidia driver and nvidia-cuda-toolkit is installed in root level:
 
-    
-
         nvidia-smi
 
         nvcc --version
