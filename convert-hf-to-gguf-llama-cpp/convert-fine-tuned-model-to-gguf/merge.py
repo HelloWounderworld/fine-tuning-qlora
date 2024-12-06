@@ -1,5 +1,5 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from peft import PeftModel, PeftConfig
+from peft import PeftModel
 
 # Carrega o modelo base
 base_model_name = "meta-llama/Llama-2-7b-chat-hf"

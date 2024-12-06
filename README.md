@@ -62,11 +62,19 @@ An introductory books to understand about this concept are
 
 Throught of a dataset, in this time, we will considere the 10% of this data as a reference to measure how smart the LLM became.
 
-## Steps that I would like to teach to mkae Fine Tuning:
+## Steps that I would like to teach to make Fine Tuning:
 
 Step 1. Fine Tuning create a ".gguf" file. このファイル制作はいわゆる人間の自頭の作成です。
 
 Step 2. To make Fine Tuning localy without internet.
+
+## Docker General Settings:
+
+### Docker Proxy configuration:
+
+    https://docs.docker.com/engine/daemon/proxy/
+
+    https://docs.docker.com/engine/cli/proxy/
 
 ## Creating a virtual environment in Python and we will install Ollama to run Fugaku LLM:
 Article where I based
