@@ -438,39 +438,9 @@ We have a lot of steps to finally make possible to begin fine-tuning
 
         https://note.com/npaka/n/na3f5abf30629
 
-5. Converting Fine-Tuned model to the .gguf file - to make more easy to test with ollama:
+5. To make merge:
 
-        https://huggingface.co/docs/transformers/main/gguf
-
-        https://github.com/ggerganov/llama.cpp.git
-
-        https://qiita.com/hudebakononaka/items/ca295eae60231d7d025f
-
-        https://qiita.com/kyotoman/items/5d460708d798a6f26cf0
-
-        https://www.reddit.com/r/LocalLLaMA/comments/1amjx77/how_to_convert_my_finetuned_model_to_gguf/?rdt=56046
-
-        https://github.com/ggerganov/llama.cpp/discussions/4997
-
-        https://github.com/ggerganov/llama.cpp/discussions/2948
-
-        https://medium.com/@qdrddr/the-easiest-way-to-convert-a-model-to-gguf-and-quantize-91016e97c987
-
-    Make git clone of llama.cpp
-
-        GGML_CUDA=1 make
-
-        pip install -r requirements/requirements-convert-hf-to-gguf.txt
-
-    Command to make convertion by modelfile to gguf
-
-        python llama.cpp/convert_hf_to_gguf.py ./convert-hf-to-gguf/merged_model_qlora_peft --outtype q8_0 --outfile ./gguf-file-complete/Llama-2-7b-chat-hf-fine-tuning-peft-q8_0.gguf
-
-5. Converting Fine-Tuned model to the .gguf file using unsloth:
-
-        https://docs.unsloth.ai/basics/saving-and-using-models/saving-to-gguf
-
-        https://medium.com/@imranullahds/unlocking-efficiency-a-deep-dive-into-medical-model-fine-tuning-with-unsloth-trl-and-peft-066358fc197b
+        https://adapterhub.ml/blog/2024/08/adapters-update-reft-qlora-merging-models/
 
 6. TIP: If your home directory storage is almost filled, you could change the place where you can storage following instructions below
 
@@ -485,12 +455,6 @@ We have a lot of steps to finally make possible to begin fine-tuning
         https://stackoverflow.com/questions/59345566/move-docker-volume-to-different-partition
 
         https://forums.docker.com/t/how-to-change-var-lib-docker-directory-with-overlay2/43620
-
-## Creating an Interactive Chat by Ollama:
-
-        https://github.com/ollama-ui/ollama-ui
-
-        https://tech.takuyakobayashi.jp/2024/05/18/23#google_vignette
 
 ## References:
 
