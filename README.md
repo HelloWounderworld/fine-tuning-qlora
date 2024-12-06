@@ -122,7 +122,9 @@ We have a lot of steps to finally make possible to begin fine-tuning
 
 ### Setting up the environment to make it possible to install NVIDIA and CUDA within the container:
 
-1. Check if Nvidia driver and nvidia-cuda-toolkit is installed in root level:
+1. To enter in youer terminal and to check if Nvidia driver and nvidia-cuda-toolkit is installed in root level:
+
+    
 
         nvidia-smi
 
