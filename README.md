@@ -76,7 +76,7 @@ Step 2. To make Fine Tuning localy without internet.
 
     https://docs.docker.com/engine/cli/proxy/
 
-## Creating a virtual environment in Python and we will install Ollama to run Fugaku LLM:
+## Setp by Setp to make fine-tuning:
 Article where I based
 
     https://tech.takuyakobayashi.jp/2024/05/18/23#google_vignette
@@ -94,46 +94,6 @@ Article where I based
 1. Checking python version:
 
         python --version or python3 --version
-
-2. Checking if venv installed:
-
-    Usually, Python 3.3 to above the venv comes together.
-
-         python -m venv --help
-
-    If not just install running the following
-
-        sudo apt-get install python3.x-venv
-
-3. Creating an virtual environment:
-
-    Choose the directory that you want to develop and digit the following command
-
-        python -m venv environment_name
-
-4. Activating the virtual environment:
-
-    Window:
-
-         environment_name\Scripts\activate
-
-    MacOs/Linux:
-
-         source environment_name/bin/activate
-
-5. Now, you can install, using pip, fastapi package:
-
-    Before to install packages
-
-        python -m pip install --upgrade pip
-
-    And now, you can install
-
-        pip install -q accelerate==0.26.1 peft==0.4.0 bitsandbytes==0.42.0 transformers==4.36.2 trl==0.4.7 datasets==2.16.1
-
-    If you have a requirements.txt, just copy it inside of virtual environment directory and run following command
-
-         pip install -r requirements.txt
 
 6. Freeze packages versions on the requirements.txt file:
 

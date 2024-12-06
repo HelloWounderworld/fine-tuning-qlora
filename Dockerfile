@@ -2,11 +2,6 @@ FROM nvidia/cuda:12.6.2-devel-ubuntu22.04
 
 SHELL ["/bin/bash", "-c"]
 
-# ARG UID
-# ARG GID
-# ARG GROUPNAME
-# RUN groupadd -g ${GID} ${GROUPNAME} && useradd -m -s /bin/bash -u ${UID} -g ${GID} ${USERNAME}
-
 ARG DEBIAN_FRONTEND=noninteractive
 ENV GIT_SSL_NO_VERIFY=true
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -14,7 +9,7 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONUTF8=1
 ENV PIP_NO_CACHE_DIR=off
 
-# COPY sources.list /etc/apt/sources.list
+COPY sources.list /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get upgrade -y \
@@ -50,20 +45,6 @@ RUN apt-get update \
     apt-utils \
     dpkg
 
-# set locale to ja_JP
-# ENV LANG=ja_JP.UTF-8
-# ENV LANGUAGE=ja_JP:ja
-# ENV TZ Asia/Tokyo
-# RUN update-locale LANG=ja_JP.UTF-8 \
-#     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
-#     && echo > /etc/timezone
-
-# Install Ollama
-# RUN chmod 777 /opt \
-#     && curl -fsSL https://ollama.com/install.sh | sh
-
-# Install Python with 3.10 version, install Pyenv or activate python virtual environment
-
 WORKDIR /opt
 
 ENV PYENV_ROOT /opt/.pyenv
@@ -80,7 +61,6 @@ RUN git clone https://github.com/pyenv/pyenv.git ${PYENV_ROOT} \
     && python --version \
     && pip install --upgrade pip
 
-# Install CUDA
 WORKDIR /teramatsu/qlora
 
 COPY . .
@@ -88,8 +68,6 @@ COPY . .
 RUN apt-get update \
     && apt-get -y upgrade \
     && nvcc --version \
-    && python -m venv .venv \
-    && source .venv/bin/activate \
     && pip install -U -r requirements.txt \
     && pip freeze > requirements.txt
 
