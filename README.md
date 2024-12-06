@@ -76,75 +76,7 @@ Step 2. To make Fine Tuning localy without internet.
 
     https://docs.docker.com/engine/cli/proxy/
 
-## Setp by Setp to make fine-tuning:
-Article where I based
-
-    https://tech.takuyakobayashi.jp/2024/05/18/23#google_vignette
-
-    https://thenewstack.io/how-to-set-up-and-run-a-local-llm-with-ollama-and-llama-2/
-
-    https://zenn.dev/if001/articles/6c507e15cd958b
-
-    https://note.com/npaka/n/n79eebc29366d
-
-    https://ollama.com/blog/run-llama2-uncensored-locally
-
-    https://www.silasreinagel.com/blog/ai/llama2/llm/2024/03/14/ai-how-to-run-llama-2-locally/
-
-1. Checking python version:
-
-        python --version or python3 --version
-
-6. Freeze packages versions on the requirements.txt file:
-
-    After installed packages that you need to your project is a good practice to freeze its in a requirements.txt files.
-
-    To do it, you have, in first, digit
-
-        pip freeze
-
-    After this you have to create a requirements file and to make Ctrl+C and Ctrl+V about this file. Or, more fast
-
-        pip freeze > requirements.txt
-
-7. (Tip) If you want to get out of the virtual environment just type:
-
-        deactivate
-
-8. Installing Ollama:
-
-        sudo apt-get update
-
-        sudo apt-get install curl
-
-        curl -fsSL https://ollama.com/install.sh | sh
-
-        ollama serve
-
-9. Run Ollama:
-
-    In first place, you have to in at the model directory
-
-        cd model
-
-    In the following to run the command below to read modelfile.txt
-
-        ollama create fugaku -f modelfile.txt
-
-    After this, you can start the ollama
-
-        ollama run fugaku
-
-    TIP: If you need to finish the chat, you just need to type
-
-        /bye
-
-10. Verify ollama's log
-
-
-        journalctl -u ollama --no-pager
-
-## Articles that I based to make Fine Tuning:
+## Step by Setp to make fine-tuning:
 
     https://note.com/kan_hatakeyama/n/ncd09c52d26c7
 
@@ -186,6 +118,10 @@ TIP: Is going to be necessary to see python version... I'm using 3.13.0... to mu
 
 At the conda virtual environment I'm used python3.10.15
 
+We have a lot of steps to finally make possible to begin fine-tuning
+
+### Setting up the environment to make it possible to install NVIDIA and CUDA within the container:
+
 1. Check if Nvidia driver and nvidia-cuda-toolkit is installed in root level:
 
         nvidia-smi
@@ -211,7 +147,15 @@ At the conda virtual environment I'm used python3.10.15
         ~/.config/systemd/user/docker.service.d/http-proxy.conf
         ~/.docker/config.json   
 
-1. Download qLora library using git:
+2. Configure Nvidia-container-toolkit to the docker:
+
+        https://hub.docker.com/r/nvidia/cuda
+
+        https://hub.docker.com/layers/nvidia/cuda/12.2.0-runtime-ubuntu20.04/images/sha256-3faf586290da5a86115cbf907f3a34ba48e97875a8e148fa969ddaa6b1472b93
+
+        https://docs.docker.com/compose/how-tos/gpu-support/
+
+        https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
 
 2. Setting CUDA, nvidia-cuda-toolkit, with the same version of your GPU:
 
@@ -259,82 +203,15 @@ At the conda virtual environment I'm used python3.10.15
 
         https://rightcode.co.jp/blogs/12323
 
+### Building Docker container and to make fine-tuning inside:
+
+1. Download qLora library using git:
+
 2. Login at the Huggingface-cli:
 
     huggingface-cli --help
 
     huggingface-cli login
-
-2. Configure Nvidia-container-toolkit to the docker:
-
-        https://hub.docker.com/r/nvidia/cuda
-
-        https://hub.docker.com/layers/nvidia/cuda/12.2.0-runtime-ubuntu20.04/images/sha256-3faf586290da5a86115cbf907f3a34ba48e97875a8e148fa969ddaa6b1472b93
-
-        https://docs.docker.com/compose/how-tos/gpu-support/
-
-        https://github.com/suvash/nixos-nvidia-cuda-python-docker-compose/blob/main/03-nvidia-docker-compose-setup.org
-
-2. Installing miniconda (talvez nao precise, pois creio que seja a versao do python que permite ou nao a instalacao)
-
-        https://docs.anaconda.com/miniconda/miniconda-install/
-
-        mkdir -p ~/miniconda3
-        wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-        bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-        rm ~/miniconda3/miniconda.
-        
-        source ~/miniconda3/bin/activate
-
-        conda init --all
-
-        conda create -n meu_ambiente python=3.10
-        conda activate gua
-        conda install pip
-
-        cd qlora
-        pip install -U -r requirements.txt
-
-    Let check if qLora is working, inside qlora, directory (this need setting at the google colab)
-
-        cd examples
-        guanaco_7B_demo_colab.ipynb
-
-        pip install scikit-learn --no-build-isolation
-        Requirement already satisfied: scikit-learn in /home/teramatsu/miniconda3/envs/gua/lib/python3.13/site-packages (1.5.2)
-        Requirement already satisfied: numpy>=1.19.5 in /home/teramatsu/miniconda3/envs/gua/lib/python3.13/site-packages (from scikit-learn) (2.1.2)
-        Requirement already satisfied: scipy>=1.6.0 in /home/teramatsu/miniconda3/envs/gua/lib/python3.13/site-packages (from scikit-learn) (1.14.1)
-        Requirement already satisfied: joblib>=1.2.0 in /home/teramatsu/miniconda3/envs/gua/lib/python3.13/site-packages (from scikit-learn) (1.4.2)
-        Requirement already satisfied: threadpoolctl>=3.1.0 in /home/teramatsu/miniconda3/envs/gua/lib/python3.13/site-packages (from scikit-learn) (3.5.0)
-
-    If necessary
-
-        conda remove --name meu_ambiente --all
-
-2. Install Pyenv:
-
-    We are going to use this service to make possible the installation of a specific python version inside of a virtual environment
-
-        https://ericsysmin.com/2024/01/11/how-to-install-pyenv-on-ubuntu-22-04/
-
-    Definir a Versão Global ou Local:
-
-        pyenv global 3.x.x  # Para definir globalmente
-        pyenv local 3.x.x   # Para definir para um projeto específico
-
-    Criar o Ambiente Virtual
-
-        python3.x -m venv nome_do_ambiente
-
-        python3.10 -m venv meu_ambiente
-
-2. Active virtual environment using python
-
-3. To install libraries at the requirements.txt file:
-
-        https://github.com/scikit-learn/scikit-learn/issues/26858
-
-    TIP: https://scikit-learn.org/stable/install.html
 
 4. Testing Llama, before training, using ollama:
 
