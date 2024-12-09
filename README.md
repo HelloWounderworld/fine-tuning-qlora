@@ -58,7 +58,13 @@ An introductory books to understand about this concept are
 
 ## BLEU metric to measure how smart the LLM became
 
+    https://mlexplained.blog/2023/07/08/large-language-model-llm-evaluation-metrics-bleu-and-rouge/
+
     https://cloud.google.com/translate/docs/advanced/automl-evaluate?hl=pt-br
+
+    https://en.wikipedia.org/wiki/ROUGE_(metric)
+
+    https://en.wikipedia.org/wiki/METEOR
 
 Throught of a dataset, in this time, we will considere the 10% of this data as a reference to measure how smart the LLM became.
 
