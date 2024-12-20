@@ -66,6 +66,8 @@ An introductory books to understand about this concept are
 
     https://en.wikipedia.org/wiki/METEOR
 
+    https://qiita.com/amtsyh/items/a926b79b90dfabe895e9
+
 Throught of a dataset, in this time, we will considere the 10% of this data as a reference to measure how smart the LLM became.
 
 ## Steps that I would like to teach to make Fine Tuning:
