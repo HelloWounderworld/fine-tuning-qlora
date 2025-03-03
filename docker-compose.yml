@@ -12,7 +12,7 @@ services:
             count: all
             capabilities: [gpu]
     build:
-      context: .
+      context: ./api
       dockerfile: Dockerfile
       args:
         HTTP_PROXY: ${HTTP_PROXY:-}

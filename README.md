@@ -4,8 +4,6 @@
 
     https://huggingface.co/meta-llama/Llama-2-7b-hf
 
-    https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct/tree/main
-
 ## What is Fine tuning?
 ファインチューニングはいわゆる人間で例えますと人間の脳をよく言えば教育で悪く言えば洗脳するようなものです。なのでまずは何をするのかといいますと人間の脳の洗脳を施す前にまずは学習させましてその人の自頭を良くしてなおかつ都合のいいように考え方を偏らせる方法です。
 
@@ -466,55 +464,37 @@ We have a lot of steps to finally make possible to begin fine-tuning
 
 ## References:
 
-1. [Fugaku LLM ChatBot][1]
-2. [Fugaku-LLM DeepSpeedFugaku][2]
-3. [Pytorch Nvidia][3]
-4. [Awesome Japanese LLM][4]
-5. [Nvidia Driver Download][5]
-6. [Nvidia Container Toolkit][6]
-7. [Nvidia Container Toolkit Documentation][7]
-8. [Ollama Instructions to Use Fugaku-LLM 13B GGUF][8]
-9. [Ollama Instructions to Use Fugaku-LLM 13B GGUF by Ubuntu][9]
-10. [Fugaku LLM ChatBot How to Build][10]
-11. [Fugaku LLM ChatBot How to Build 2][11]
-12. [Fugaku LLM ChatBot Ollama Chat Interface][12]
-13. [Fugaku LLM 13B Japanese language model][13]
-14. [How to training an LLM using Fine Tune by Transformers Reforiciment Learning STF][14]
-15. [LLM JP STF Fine Tuning][15]
-16. [LLM JP Tokenizer][16]
-17. [LLM JP DPO - This uses many GPU Memory][17]
-18. [Lora Fine tuning][18]
-19. [qLora Fine tuning][19]
-20. [qLora Fine tuning article][20]
-21. [Phi-3][21]
-22. [Language Models are Few-Shot Learners - Foundation][22]
-23. [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models - Kind of Prompt Engineering][23]
-24. [Phi-3 - FineTuning][24]
-25. [Ollama modelfile.txt parameters settings][25]
-26. [Curiosity about Content Creation using LLM Open Source Model][26]
-27. [Clustering][27]
-28. [Docker Hub Nvidia/CUDA][28]
-29. [Docker Hub Nvida CUDA 12.2][29]
-30. [Setting Nvida Docker Compose][30]
-31. [Setting Nvidia Docker compose Github][31]
-32. [Nvidia Container Toolkit][32]
-33. [Setting proxy at the .bashrc][33]
-34. [Setting proxy at the .bashrc][34]
-35. [Simple test whether CUDA/GPU is working using Pytorch][35]
+1. [Pytorch Nvidia][3]
+1. [Nvidia Driver Download][5]
+1. [Nvidia Container Toolkit][6]
+1. [Nvidia Container Toolkit Documentation][7]
+1. [How to training an LLM using Fine Tune by Transformers Reforiciment Learning STF][14]
+1. [LLM JP STF Fine Tuning][15]
+1. [LLM JP Tokenizer][16]
+1. [LLM JP DPO - This uses many GPU Memory][17]
+1. [Lora Fine tuning][18]
+1. [qLora Fine tuning][19]
+1. [qLora Fine tuning article][20]
+1. [Phi-3][21]
+1. [Language Models are Few-Shot Learners - Foundation][22]
+1. [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models - Kind of Prompt Engineering][23]
+1. [Phi-3 - FineTuning][24]
+1. [Ollama modelfile.txt parameters settings][25]
+1. [Curiosity about Content Creation using LLM Open Source Model][26]
+1. [Clustering][27]
+1. [Docker Hub Nvidia/CUDA][28]
+1. [Docker Hub Nvida CUDA 12.2][29]
+1. [Setting Nvida Docker Compose][30]
+1. [Setting Nvidia Docker compose Github][31]
+1. [Nvidia Container Toolkit][32]
+1. [Setting proxy at the .bashrc][33]
+1. [Setting proxy at the .bashrc][34]
+1. [Simple test whether CUDA/GPU is working using Pytorch][35]
 
-[1]: https://huggingface.co/Fugaku-LLM/Fugaku-LLM-13B-instruct
-[2]: https://github.com/Fugaku-LLM/DeepSpeedFugaku
 [3]: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch
-[4]: https://github.com/llm-jp/awesome-japanese-llm
 [5]: https://www.nvidia.com/content/DriverDownloads/confirmation.php?url=/Windows/531.61/531.61-desktop-win10-win11-64bit-international-dch-whql.exe&lang=us&type=GeForce
 [6]: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/1.14.4/release-notes.html
 [7]: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/1.14.4/index.html
-[8]: https://zenn.dev/hellorusk/articles/94bf32ea09ba26
-[9]: https://tech.takuyakobayashi.jp/2024/05/18/23
-[10]: https://note.com/owlet_notes/n/nd144bd2d1dc1
-[11]: https://note.com/ngc_shj/n/n7a8ce01f13ac
-[12]: https://github.com/ollama-ui/ollama-ui
-[13]: https://dataloop.ai/library/model/fugaku-llm_fugaku-llm-13b/
 [14]: https://huggingface.co/docs/trl/index
 [15]: https://github.com/llm-jp/llm-jp-sft
 [16]: https://github.com/llm-jp/llm-jp-tokenizer
